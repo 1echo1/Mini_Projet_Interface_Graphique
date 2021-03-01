@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Learn CVN</string>
+    <string name="clr_orange">Orange</string>
+    <string name="clr_blue">Blue</string>
+    <string name="clr_green">Green</string>
+    <string name="clr_yellow">Yellow</string>
+    <string name="clr_red">Red</string>
+    <string name="clr_black">Black</string>
+    <string name="clr_white">White</string>
+    <string name="clr_brown">Brown</string>
+
+    <string name="btn_colors">Colors</string>
+    <string name="btn_vehicles">Vehicles</string>
+    <string name="btn_numbers">Numbers</string>
+    <string name="img_logo_toolbar">TODO</string>
+    <string name="img_logo_invisible">TODO</string>
+    <string name="img_return">TODO</string>
+    <string name="img_logo_menu">TODO</string>
+    <string name="ic_reload">TODO</string>
+
+    <string-array name="languages_array">
+        <item>English</item>
+        <item>Français</item>
+    </string-array>
+
+
+</resources>
