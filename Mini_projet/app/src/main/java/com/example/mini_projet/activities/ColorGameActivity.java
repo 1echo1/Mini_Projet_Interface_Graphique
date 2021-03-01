@@ -11,15 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mini_projet.R;
-import com.example.mini_projet.models.Color_game;
+import com.example.mini_projet.models.ColorGame;
 import com.example.mini_projet.models.LocaleHelper;
 import com.example.mini_projet.utils.Constants;
 
-import java.util.Random;
-
 public class ColorGameActivity extends Activity {
 
-    Color_game color_game;
+    ColorGame color_game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +27,7 @@ public class ColorGameActivity extends Activity {
         Bundle bundle = getIntent().getExtras();
         String locale = bundle.getString("locale");
 
-        color_game=new Color_game();
+        color_game=new ColorGame();
 
         setupToolbar();
         setupReload(locale);
@@ -45,7 +43,6 @@ public class ColorGameActivity extends Activity {
                 finish();
             }
         });
-
     }
 
     private void setupReload(String locale){

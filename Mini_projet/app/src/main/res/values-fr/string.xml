@@ -10,6 +10,17 @@
     <string name="clr_white">Blanc</string>
     <string name="clr_brown">Marron</string>
 
+    <string name="num_zero">Zéro</string>
+    <string name="num_one">Un</string>
+    <string name="num_two">Deux</string>
+    <string name="num_three">Trois</string>
+    <string name="num_four">Quatre</string>
+    <string name="num_five">Cinq</string>
+    <string name="num_six">Six</string>
+    <string name="num_seven">Sept</string>
+    <string name="num_eight">Huit</string>
+    <string name="num_nine">Neuf</string>
+
     <string name="btn_colors">Couleurs</string>
     <string name="btn_vehicles">Véhicules</string>
     <string name="btn_numbers">Numéros</string>

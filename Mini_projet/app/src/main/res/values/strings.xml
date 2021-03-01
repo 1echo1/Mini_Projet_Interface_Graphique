@@ -9,6 +9,17 @@
     <string name="clr_white">White</string>
     <string name="clr_brown">Brown</string>
 
+    <string name="num_zero">Zero</string>
+    <string name="num_one">One</string>
+    <string name="num_two">Two</string>
+    <string name="num_three">Three</string>
+    <string name="num_four">Four</string>
+    <string name="num_five">Five</string>
+    <string name="num_six">Six</string>
+    <string name="num_seven">Seven</string>
+    <string name="num_eight">Eight</string>
+    <string name="num_nine">Nine</string>
+
     <string name="btn_colors">Colors</string>
     <string name="btn_vehicles">Vehicles</string>
     <string name="btn_numbers">Numbers</string>

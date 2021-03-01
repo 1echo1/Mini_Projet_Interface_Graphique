@@ -31,18 +31,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setupMenu();
-
     }
 
     public void setupMenu(){
         final Button btn_col=findViewById(R.id.btn_color_game);
         final Button btn_veh = findViewById(R.id.btn_vehicles_game);
-        final Button btn_num = findViewById(R.id.btn_numbers_game);
+
 
         btn_col.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openColorGame();
+            }
+        });
+
+        final Button btn_num = findViewById(R.id.btn_numbers_game);
+        btn_num.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNumbersGame();
             }
         });
 
@@ -86,7 +93,12 @@ public class MainActivity extends AppCompatActivity {
     public void openColorGame(){
         Intent intent= new Intent(this, ColorGameActivity.class);
         intent.putExtra("locale",LocaleHelper.getLanguage(MainActivity.this));
-        Log.d("LOCALE_MAIN",LocaleHelper.getLanguage(MainActivity.this));
+        startActivity(intent);
+    }
+
+    public void openNumbersGame(){
+        Intent intent= new Intent(this, NumbersGameActivity.class);
+        intent.putExtra("locale",LocaleHelper.getLanguage(MainActivity.this));
         startActivity(intent);
     }
 

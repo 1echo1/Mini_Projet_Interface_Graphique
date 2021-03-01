@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.ColorGameActivity"></activity>
+        <activity android:name=".activities.NumbersGameActivity"></activity>
     </application>
 
 </manifest>
