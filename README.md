@@ -10,9 +10,9 @@ Voici le logo de l'app:
 
 Elle est disponible en anglais et en français.
 
-## Activitées
+## Activités
 
-L'application présente 4 activitées explicites:
+L'application présente 4 activités explicites:
 
 Menu:
 
