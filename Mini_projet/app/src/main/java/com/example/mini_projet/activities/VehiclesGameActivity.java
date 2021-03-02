@@ -6,20 +6,18 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mini_projet.R;
+import com.example.mini_projet.models.Game;
 import com.example.mini_projet.models.LocaleHelper;
-import com.example.mini_projet.models.NumbersGame;
-import com.example.mini_projet.models.VehiclesGame;
 import com.example.mini_projet.utils.Constants;
 
 public class VehiclesGameActivity extends Activity {
 
-    VehiclesGame veh_game;
+    Game veh_game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +27,7 @@ public class VehiclesGameActivity extends Activity {
         Bundle bundle = getIntent().getExtras();
         String locale = bundle.getString("locale");
 
-        veh_game=new VehiclesGame();
+        veh_game=new Game(Constants.NBR_VEH_TOTAL);
 
         setupToolbar();
         setupVehicles(locale);
@@ -66,7 +64,7 @@ public class VehiclesGameActivity extends Activity {
         btn_veh_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(veh_game.verify_victory(veh_game.get_veh_cell(0))) {
+                if(veh_game.verify_victory(veh_game.get_cell(0))) {
                     setupVehicles(locale);
                     setupVehChoice(locale);
                 }
@@ -77,7 +75,7 @@ public class VehiclesGameActivity extends Activity {
         btn_veh_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(veh_game.verify_victory(veh_game.get_veh_cell(1))) {
+                if(veh_game.verify_victory(veh_game.get_cell(1))) {
                     setupVehicles(locale);
                     setupVehChoice(locale);
                 }
@@ -88,7 +86,7 @@ public class VehiclesGameActivity extends Activity {
         btn_veh_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(veh_game.verify_victory(veh_game.get_veh_cell(2))) {
+                if(veh_game.verify_victory(veh_game.get_cell(2))) {
                     setupVehicles(locale);
                     setupVehChoice(locale);
                 }
@@ -99,22 +97,22 @@ public class VehiclesGameActivity extends Activity {
         btn_veh_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(veh_game.verify_victory(veh_game.get_veh_cell(3))) {
+                if(veh_game.verify_victory(veh_game.get_cell(3))) {
                     setupVehicles(locale);
                     setupVehChoice(locale);
                 }
             }
         });
 
-        veh_game.choose_vehicles_display();
+        veh_game.choose_elements_display();
 
-        for(int i = 0; i<veh_game.vehArray.length; i++) {
-            Log.d("Array", String.valueOf(veh_game.vehArray[i]));
+        for(int i = 0; i<veh_game.array.length; i++) {
+            Log.d("Array", String.valueOf(veh_game.array[i]));
         }
 
 
-        for(int i = 0; i<veh_game.vehArray.length; i++) {
-            switch (veh_game.get_veh_cell(i)) {
+        for(int i = 0; i<veh_game.array.length; i++) {
+            switch (veh_game.get_cell(i)) {
                 case Constants.CAR:
                     if (i == 0) {
                         btn_veh_1.setImageResource(R.mipmap.ic_car_foreground);
@@ -194,7 +192,7 @@ public class VehiclesGameActivity extends Activity {
 
         final TextView text_veh = findViewById(R.id.text_veh);
 
-        int veh=veh_game.getVeh_to_find();
+        int veh=veh_game.get_element_to_find();
 
         switch (veh){
             case Constants.CAR:

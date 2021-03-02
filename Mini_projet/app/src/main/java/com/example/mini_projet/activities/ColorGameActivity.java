@@ -11,13 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mini_projet.R;
-import com.example.mini_projet.models.ColorGame;
+import com.example.mini_projet.models.Game;
 import com.example.mini_projet.models.LocaleHelper;
 import com.example.mini_projet.utils.Constants;
 
 public class ColorGameActivity extends Activity {
 
-    ColorGame color_game;
+    Game color_game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class ColorGameActivity extends Activity {
         Bundle bundle = getIntent().getExtras();
         String locale = bundle.getString("locale");
 
-        color_game=new ColorGame();
+        color_game=new Game(Constants.NBR_COLORS_TOTAL);
 
         setupToolbar();
         setupReload(locale);
@@ -63,7 +63,7 @@ public class ColorGameActivity extends Activity {
         btn_col_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(color_game.verify_victory(color_game.get_color_cell(0))) {
+                if(color_game.verify_victory(color_game.get_cell(0))) {
                     setupColors(locale);
                     setupColorChoice(locale);
                 }
@@ -74,7 +74,7 @@ public class ColorGameActivity extends Activity {
         btn_col_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(color_game.verify_victory(color_game.get_color_cell(1))) {
+                if(color_game.verify_victory(color_game.get_cell(1))) {
                     setupColors(locale);
                     setupColorChoice(locale);
                 }
@@ -84,7 +84,7 @@ public class ColorGameActivity extends Activity {
         btn_col_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(color_game.verify_victory(color_game.get_color_cell(2))) {
+                if(color_game.verify_victory(color_game.get_cell(2))) {
                     setupColors(locale);
                     setupColorChoice(locale);
                 }
@@ -95,22 +95,22 @@ public class ColorGameActivity extends Activity {
         btn_col_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(color_game.verify_victory(color_game.get_color_cell(3))) {
+                if(color_game.verify_victory(color_game.get_cell(3))) {
                     setupColors(locale);
                     setupColorChoice(locale);
                 }
             }
         });
 
-        color_game.choose_colors_display();
+        color_game.choose_elements_display();
 
-        for(int i = 0; i<color_game.colorArray.length; i++) {
-            Log.d("Array", String.valueOf(color_game.colorArray[i]));
+        for(int i = 0; i<color_game.array.length; i++) {
+            Log.d("Array", String.valueOf(color_game.array[i]));
         }
 
 
-        for(int i = 0; i<color_game.colorArray.length; i++) {
-            switch (color_game.get_color_cell(i)) {
+        for(int i = 0; i<color_game.array.length; i++) {
+            switch (color_game.get_cell(i)) {
                 case Constants.GREEN:
                     if (i == 0) {
                         btn_col_1.setBackgroundColor(0xFF66FF66);
@@ -212,7 +212,7 @@ public class ColorGameActivity extends Activity {
 
         final TextView text_color = findViewById(R.id.text_color);
 
-        int color=color_game.getColor_to_find();
+        int color=color_game.get_element_to_find();
 
         switch (color){
             case Constants.GREEN:

@@ -11,12 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mini_projet.R;
+import com.example.mini_projet.models.Game;
 import com.example.mini_projet.models.LocaleHelper;
-import com.example.mini_projet.models.NumbersGame;
+import com.example.mini_projet.utils.Constants;
 
 public class NumbersGameActivity extends Activity {
 
-   NumbersGame num_game;
+   Game num_game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class NumbersGameActivity extends Activity {
         Bundle bundle = getIntent().getExtras();
         String locale = bundle.getString("locale");
 
-        num_game=new NumbersGame();
+        num_game=new Game(Constants.NBR_NUMS_TOTAL);
 
         setupToolbar();
         setupNumbers(locale);
@@ -63,7 +64,7 @@ public class NumbersGameActivity extends Activity {
         btn_num_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(num_game.verify_victory(num_game.get_color_cell(0))) {
+                if(num_game.verify_victory(num_game.get_cell(0))) {
                     setupNumbers(locale);
                     setupNumChoice(locale);
                 }
@@ -74,7 +75,7 @@ public class NumbersGameActivity extends Activity {
         btn_num_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(num_game.verify_victory(num_game.get_color_cell(1))) {
+                if(num_game.verify_victory(num_game.get_cell(1))) {
                     setupNumbers(locale);
                     setupNumChoice(locale);
                 }
@@ -85,7 +86,7 @@ public class NumbersGameActivity extends Activity {
         btn_num_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(num_game.verify_victory(num_game.get_color_cell(2))) {
+                if(num_game.verify_victory(num_game.get_cell(2))) {
                     setupNumbers(locale);
                     setupNumChoice(locale);
                 }
@@ -96,22 +97,22 @@ public class NumbersGameActivity extends Activity {
         btn_num_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(num_game.verify_victory(num_game.get_color_cell(3))) {
+                if(num_game.verify_victory(num_game.get_cell(3))) {
                     setupNumbers(locale);
                     setupNumChoice(locale);
                 }
             }
         });
 
-        num_game.choose_numbers_display();
+        num_game.choose_elements_display();
 
-        for(int i = 0; i<num_game.numArray.length; i++) {
-            Log.d("Array", String.valueOf(num_game.numArray[i]));
+        for(int i = 0; i<num_game.array.length; i++) {
+            Log.d("Array", String.valueOf(num_game.array[i]));
         }
 
 
-        for(int i = 0; i<num_game.numArray.length; i++) {
-            switch (num_game.get_color_cell(i)) {
+        for(int i = 0; i<num_game.array.length; i++) {
+            switch (num_game.get_cell(i)) {
                 case 0:
                     if (i == 0) {
                         btn_num_1.setText("0");
@@ -235,7 +236,7 @@ public class NumbersGameActivity extends Activity {
 
         final TextView text_num = findViewById(R.id.text_num);
 
-        int num=num_game.getNum_to_find();
+        int num=num_game.get_element_to_find();
 
         switch (num){
             case 0:

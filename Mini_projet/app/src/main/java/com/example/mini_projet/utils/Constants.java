@@ -3,13 +3,9 @@ package com.example.mini_projet.utils;
 public class Constants {
 
     public static final int NBR_COLORS_TOTAL = 8;
-    public static final int NBR_COLORS_IN_GAME = 4;
-
     public static final int NBR_NUMS_TOTAL = 10;
-    public static final int NBR_NUMS_IN_GAME = 4;
-
     public static final int NBR_VEH_TOTAL = 6;
-    public static final int NBR_VEH_IN_GAME = 4;
+    public static final int NBR_CHOICES_IN_GAME = 4;
 
     public static final int ORANGE = 0;
     public static final int BLUE = 1;
