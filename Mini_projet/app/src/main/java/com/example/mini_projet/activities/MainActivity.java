@@ -16,6 +16,12 @@ import android.widget.Spinner;
 import com.example.mini_projet.R;
 import com.example.mini_projet.utils.LocaleHelper;
 
+///////////////////////////////////////
+//
+//Lien vers github: https://github.com/1echo1/Mini_Projet_Interface_Graphique
+//
+//////////////////////////////////////
+
 
 public class MainActivity extends AppCompatActivity {
 

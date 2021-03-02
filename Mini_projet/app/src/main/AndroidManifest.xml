@@ -10,16 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ColorGameActivity" />
-        <activity android:name=".activities.NumbersGameActivity" />
-        <activity android:name=".activities.VehiclesGameActivity"></activity>
+        <activity android:name=".activities.ColorGameActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.NumbersGameActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.VehiclesGameActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
