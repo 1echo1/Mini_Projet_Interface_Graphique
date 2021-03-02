@@ -4,11 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,10 +14,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.mini_projet.R;
-import com.example.mini_projet.models.LocaleHelper;
-
-import java.time.format.ResolverStyle;
-import java.util.Locale;
+import com.example.mini_projet.utils.LocaleHelper;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -58,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        final Button btn_google_p = findViewById(R.id.btn_google_play);
+        btn_google_p.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGooglePlay();
+            }
+        });
+
         Spinner spinner = (Spinner) findViewById(R.id.languages_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.languages_array, android.R.layout.simple_spinner_item);
@@ -85,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_col.setText(resources.getString(R.string.btn_colors));
                 btn_num.setText(resources.getString(R.string.btn_numbers));
                 btn_veh.setText(resources.getString(R.string.btn_vehicles));
+                btn_google_p.setText(resources.getString(R.string.btn_google_play));
             }
 
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -113,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    public void openGooglePlay(){
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://play.google.com/store/apps"));
+        startActivity(intent);
+    }
 
 }

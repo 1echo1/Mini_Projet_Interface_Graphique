@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.mini_projet.R;
 import com.example.mini_projet.models.Game;
-import com.example.mini_projet.models.LocaleHelper;
+import com.example.mini_projet.utils.LocaleHelper;
 import com.example.mini_projet.utils.Constants;
 
 public class ColorGameActivity extends Activity {

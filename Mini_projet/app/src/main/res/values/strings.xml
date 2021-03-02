@@ -31,6 +31,8 @@
     <string name="btn_colors">Colors</string>
     <string name="btn_vehicles">Vehicles</string>
     <string name="btn_numbers">Numbers</string>
+    <string name="btn_google_play">More games</string>
+
     <string name="img_logo_toolbar">TODO</string>
     <string name="img_logo_invisible">TODO</string>
     <string name="img_return">TODO</string>

@@ -45,10 +45,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="64dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="60dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
 
@@ -57,23 +58,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="@string/btn_colors"
-            android:background="#595959"/>
+            android:background="#595959"
+            android:text="@string/btn_colors" />
 
         <Button
             android:id="@+id/btn_vehicles_game"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="@string/btn_vehicles"
-            android:background="#595959"/>
+            android:background="#595959"
+            android:text="@string/btn_vehicles" />
 
         <Button
             android:id="@+id/btn_numbers_game"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_numbers"
-            android:background="#595959"/>
+            android:layout_marginBottom="40dp"
+            android:background="#595959"
+            android:text="@string/btn_numbers" />
+
+        <Button
+            android:id="@+id/btn_google_play"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#595959"
+            android:text="@string/btn_google_play" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
