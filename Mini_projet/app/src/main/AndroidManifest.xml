@@ -17,8 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ColorGameActivity"></activity>
-        <activity android:name=".activities.NumbersGameActivity"></activity>
+        <activity android:name=".activities.ColorGameActivity" />
+        <activity android:name=".activities.NumbersGameActivity" />
+        <activity android:name=".activities.VehiclesGameActivity"></activity>
     </application>
 
 </manifest>

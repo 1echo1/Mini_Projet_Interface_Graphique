@@ -35,9 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void setupMenu(){
         final Button btn_col=findViewById(R.id.btn_color_game);
-        final Button btn_veh = findViewById(R.id.btn_vehicles_game);
-
-
         btn_col.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openNumbersGame();
+            }
+        });
+
+        final Button btn_veh = findViewById(R.id.btn_vehicles_game);
+        btn_veh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openVehicleGame();
             }
         });
 
@@ -98,6 +103,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void openNumbersGame(){
         Intent intent= new Intent(this, NumbersGameActivity.class);
+        intent.putExtra("locale",LocaleHelper.getLanguage(MainActivity.this));
+        startActivity(intent);
+    }
+
+    public void openVehicleGame(){
+        Intent intent= new Intent(this, VehiclesGameActivity.class);
         intent.putExtra("locale",LocaleHelper.getLanguage(MainActivity.this));
         startActivity(intent);
     }
