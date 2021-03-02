@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Learn CVN</string>
+
     <string name="clr_orange">Orange</string>
     <string name="clr_blue">Blue</string>
     <string name="clr_green">Green</string>
@@ -19,6 +20,13 @@
     <string name="num_seven">Seven</string>
     <string name="num_eight">Eight</string>
     <string name="num_nine">Nine</string>
+
+    <string name="veh_moto">Motorcycle</string>
+    <string name="veh_car">Car</string>
+    <string name="veh_truck">Truck</string>
+    <string name="veh_bus">Bus</string>
+    <string name="veh_boat">Boat</string>
+    <string name="veh_bike">Bicycle</string>
 
     <string name="btn_colors">Colors</string>
     <string name="btn_vehicles">Vehicles</string>

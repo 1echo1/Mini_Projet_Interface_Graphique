@@ -12,7 +12,11 @@ import android.widget.TextView;
 
 import com.example.mini_projet.R;
 import com.example.mini_projet.models.Game;
+<<<<<<< HEAD
 import com.example.mini_projet.utils.LocaleHelper;
+=======
+import com.example.mini_projet.models.LocaleHelper;
+>>>>>>> aeef48da88597e5d480bf837025b9531d4bb7588
 import com.example.mini_projet.utils.Constants;
 
 public class VehiclesGameActivity extends Activity {
