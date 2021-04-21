@@ -16,15 +16,7 @@ import android.widget.Spinner;
 import com.example.mini_projet.R;
 import com.example.mini_projet.utils.LocaleHelper;
 
-///////////////////////////////////////
-//
-//Lien vers github: https://github.com/1echo1/Mini_Projet_Interface_Graphique
-//
-//////////////////////////////////////
-
-
 public class MainActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,27 +27,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setupMenu(){
-        final Button btn_col=findViewById(R.id.btn_color_game);
-        btn_col.setOnClickListener(new View.OnClickListener() {
+        final Button btn_learn=findViewById(R.id.btn_learn);
+        btn_learn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openColorGame();
+                openLearnActivity();
             }
         });
 
-        final Button btn_num = findViewById(R.id.btn_numbers_game);
-        btn_num.setOnClickListener(new View.OnClickListener() {
+        final Button btn_train = findViewById(R.id.btn_train);
+        btn_train.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openNumbersGame();
-            }
-        });
-
-        final Button btn_veh = findViewById(R.id.btn_vehicles_game);
-        btn_veh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openVehicleGame();
+                openTrainActivity();
             }
         });
 
@@ -91,9 +75,8 @@ public class MainActivity extends AppCompatActivity {
                         resources = context.getResources();
                         break;
                 }
-                btn_col.setText(resources.getString(R.string.btn_colors));
-                btn_num.setText(resources.getString(R.string.btn_numbers));
-                btn_veh.setText(resources.getString(R.string.btn_vehicles));
+                btn_learn.setText(resources.getString(R.string.btn_learn));
+                btn_train.setText(resources.getString(R.string.btn_train));
                 btn_google_p.setText(resources.getString(R.string.btn_google_play));
             }
 
@@ -105,20 +88,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openColorGame(){
-        Intent intent= new Intent(this, ColorGameActivity.class);
+    public void openTrainActivity(){
+        Intent intent= new Intent(this, MenuTrainActivity.class);
         intent.putExtra("locale",LocaleHelper.getLanguage(MainActivity.this));
         startActivity(intent);
     }
 
-    public void openNumbersGame(){
-        Intent intent= new Intent(this, NumbersGameActivity.class);
-        intent.putExtra("locale",LocaleHelper.getLanguage(MainActivity.this));
-        startActivity(intent);
-    }
-
-    public void openVehicleGame(){
-        Intent intent= new Intent(this, VehiclesGameActivity.class);
+    public void openLearnActivity(){
+        Intent intent= new Intent(this, MenuLearnActivity.class);
         intent.putExtra("locale",LocaleHelper.getLanguage(MainActivity.this));
         startActivity(intent);
     }

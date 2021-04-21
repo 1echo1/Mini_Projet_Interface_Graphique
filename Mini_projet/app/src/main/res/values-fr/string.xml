@@ -35,11 +35,16 @@
     <string name="btn_numbers">Numéros</string>
     <string name="btn_google_play">Plus de jeux</string>
 
+    <string name="btn_learn">Découvrir</string>
+    <string name="btn_train">"S'exercer"</string>
+
     <string name="img_logo_toolbar">TODO</string>
     <string name="img_logo_invisible">TODO</string>
     <string name="img_return">TODO</string>
     <string name="img_logo_menu">TODO</string>
     <string name="ic_reload">TODO</string>
+
+    <string name="text_train_menu">Que souhaitez-vous exercer?</string>
 
     <string-array name="languages_array">
         <item>English</item>
