@@ -45,6 +45,7 @@
     <string name="ic_reload">TODO</string>
 
     <string name="text_train_menu">Que souhaitez-vous exercer?</string>
+    <string name="text_learn_menu">Que souhaitez-vous découvrir?</string>
 
     <string-array name="languages_array">
         <item>English</item>

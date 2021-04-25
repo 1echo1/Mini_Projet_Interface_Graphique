@@ -61,38 +61,72 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="60dp"
+        android:layout_height="480dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_train"
         tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/img_colors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="TODO"
+            android:scaleX="2"
+            android:scaleY="2"
+            app:srcCompat="@mipmap/colors_foreground" />
 
         <Button
             android:id="@+id/btn_color_game"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
             android:layout_marginBottom="20dp"
             android:background="#595959"
+            android:padding="0dp"
             android:text="@string/btn_colors" />
+
+        <ImageView
+            android:id="@+id/img_veh_train"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="TODO"
+            app:srcCompat="@mipmap/ic_car_foreground" />
 
         <Button
             android:id="@+id/btn_vehicles_game"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_marginBottom="20dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
             android:background="#595959"
             android:text="@string/btn_vehicles" />
+
+        <ImageView
+            android:id="@+id/img_num_train"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="TODO"
+            android:scaleX="2"
+            android:scaleY="2"
+            app:srcCompat="@mipmap/nums_foreground" />
 
         <Button
             android:id="@+id/btn_numbers_game"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_marginBottom="40dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
             android:background="#595959"
             android:text="@string/btn_numbers" />
 
