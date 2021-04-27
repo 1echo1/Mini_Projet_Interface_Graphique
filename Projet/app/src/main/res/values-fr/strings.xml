@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Apprendre CVN</string>
+
+    <string name="clr_orange">Orange</string>
+    <string name="clr_blue">Bleu</string>
+    <string name="clr_green">Vert</string>
+    <string name="clr_yellow">Jaune</string>
+    <string name="clr_red">Rouge</string>
+    <string name="clr_black">Noir</string>
+    <string name="clr_white">Blanc</string>
+    <string name="clr_brown">Marron</string>
+
+    <string name="num_zero">Zéro</string>
+    <string name="num_one">Un</string>
+    <string name="num_two">Deux</string>
+    <string name="num_three">Trois</string>
+    <string name="num_four">Quatre</string>
+    <string name="num_five">Cinq</string>
+    <string name="num_six">Six</string>
+    <string name="num_seven">Sept</string>
+    <string name="num_eight">Huit</string>
+    <string name="num_nine">Neuf</string>
+
+    <string name="veh_moto">Moto</string>
+    <string name="veh_car">Voiture</string>
+    <string name="veh_truck">Camion</string>
+    <string name="veh_bus">Bus</string>
+    <string name="veh_boat">Bateau</string>
+    <string name="veh_bike">Vélo</string>
+
+
+    <string name="btn_colors">Couleurs</string>
+    <string name="btn_vehicles">Véhicules</string>
+    <string name="btn_numbers">Numéros</string>
+    <string name="btn_google_play">Plus de jeux</string>
+
+    <string name="btn_learn">Découvrir</string>
+    <string name="btn_train">"S'exercer"</string>
+
+    <string name="img_logo_toolbar">TODO</string>
+    <string name="img_logo_invisible">TODO</string>
+    <string name="img_return">TODO</string>
+    <string name="img_logo_menu">TODO</string>
+    <string name="ic_reload">TODO</string>
+
+    <string name="text_train_menu">Que souhaitez-vous exercer?</string>
+    <string name="text_learn_menu">Que souhaitez-vous découvrir?</string>
+
+    <string-array name="languages_array">
+        <item>English</item>
+        <item>Français</item>
+    </string-array>
+
+</resources>
