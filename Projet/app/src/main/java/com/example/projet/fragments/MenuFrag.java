@@ -1,7 +1,9 @@
 package com.example.projet.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -64,7 +66,7 @@ public class MenuFrag extends Fragment {
         btn_google_p.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // openGooglePlay();
+                openGooglePlay();
             }
         });
 
@@ -103,6 +105,12 @@ public class MenuFrag extends Fragment {
         });
 
 
+    }
+
+    public void openGooglePlay(){
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://play.google.com/store/apps"));
+        startActivity(intent);
     }
 
 }
