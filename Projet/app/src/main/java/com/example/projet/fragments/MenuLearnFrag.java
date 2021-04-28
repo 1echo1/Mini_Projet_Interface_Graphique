@@ -38,7 +38,10 @@ public class MenuLearnFrag extends Fragment {
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //finish();
+                MenuFrag menu_frag= new MenuFrag();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.learn_menu_frag, menu_frag)
+                        .commit();
             }
         });
     }
