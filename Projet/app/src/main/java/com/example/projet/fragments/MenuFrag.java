@@ -57,7 +57,10 @@ public class MenuFrag extends Fragment {
         btn_train.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //openTrainActivity();
+                MenuTrainFrag menu_train_frag= new MenuTrainFrag();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frag_menu, menu_train_frag)
+                        .commit();
             }
         });
 
