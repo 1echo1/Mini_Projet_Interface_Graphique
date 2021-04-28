@@ -62,7 +62,10 @@ public class MenuLearnFrag extends Fragment {
         btn_num.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                NumbersGameFrag numb_game_frag= new NumbersGameFrag();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.learn_menu_frag, numb_game_frag)
+                        .commit();
             }
         });
 
