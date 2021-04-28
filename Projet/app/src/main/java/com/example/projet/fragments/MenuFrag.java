@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.Spinner;
 
 import com.example.projet.R;
 import com.example.projet.activities.MainActivity;
+import com.example.projet.fragments.MenuLearnFrag;
 import com.example.projet.models.LocaleHelper;
 
 public class MenuFrag extends Fragment {
@@ -43,7 +45,10 @@ public class MenuFrag extends Fragment {
         btn_learn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //openLearnActivity();
+                MenuLearnFrag menu_learn_frag= new MenuLearnFrag();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frag_menu, menu_learn_frag)
+                        .commit();
             }
         });
 
