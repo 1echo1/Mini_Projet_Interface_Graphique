@@ -9,7 +9,7 @@
     android:layout_marginTop="250dp"
     android:layout_marginEnd="32dp"
     android:layout_marginBottom="250dp"
-    android:background="#F2F2F2"
+    android:background="@drawable/border"
     tools:context=".fragments.TrainTypeChoiceFrag">
 
 
@@ -42,7 +42,8 @@
         android:src="@mipmap/ic_find_foreground"
         app:layout_constraintEnd_toEndOf="@+id/btn_train_eye"
         app:layout_constraintStart_toStartOf="@+id/btn_train_eye"
-        tools:layout_editor_absoluteY="32dp" />
+        tools:layout_editor_absoluteY="32dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -53,6 +54,7 @@
         android:src="@mipmap/ic_write_foreground"
         app:layout_constraintEnd_toEndOf="@+id/btn_train_write"
         app:layout_constraintStart_toStartOf="@+id/btn_train_write"
-        tools:layout_editor_absoluteY="32dp" />
+        tools:layout_editor_absoluteY="32dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
