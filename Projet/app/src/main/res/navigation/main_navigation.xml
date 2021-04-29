@@ -26,5 +26,14 @@
         android:id="@+id/menuTrainFrag"
         android:name="com.example.projet.fragments.MenuTrainFrag"
         android:label="fragment_menu_train"
-        tools:layout="@layout/fragment_menu_train" />
+        tools:layout="@layout/fragment_menu_train" >
+        <action
+            android:id="@+id/action_menuTrainFrag_to_trainTypeChoiceFrag"
+            app:destination="@id/trainTypeChoiceFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainTypeChoiceFrag"
+        android:name="com.example.projet.fragments.TrainTypeChoiceFrag"
+        android:label="fragment_train_type_choice"
+        tools:layout="@layout/fragment_train_type_choice" />
 </navigation>
