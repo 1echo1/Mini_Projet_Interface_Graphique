@@ -10,7 +10,7 @@ import com.example.projet.fragments.MenuLearnFrag;
 
 public class MainActivity extends AppCompatActivity {
 
-    MenuFrag frag_menu;
+   // MenuFrag frag_menu;
 
 
     @Override
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        frag_menu= new MenuFrag();
+       // frag_menu= new MenuFrag();
 
     }
 }

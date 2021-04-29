@@ -8,15 +8,23 @@
     <fragment
         android:id="@+id/menuFrag"
         android:name="com.example.projet.fragments.MenuFrag"
-        android:label="MenuFrag"
+        android:label="fragment_menu"
         tools:layout="@layout/fragment_menu">
         <action
             android:id="@+id/action_menuFrag_to_menuLearnFrag"
             app:destination="@id/menuLearnFrag" />
+        <action
+            android:id="@+id/action_menuFrag_to_menuTrainFrag"
+            app:destination="@id/menuTrainFrag" />
     </fragment>
     <fragment
         android:id="@+id/menuLearnFrag"
         android:name="com.example.projet.fragments.MenuLearnFrag"
         android:label="fragment_menu_learn"
         tools:layout="@layout/fragment_menu_learn" />
+    <fragment
+        android:id="@+id/menuTrainFrag"
+        android:name="com.example.projet.fragments.MenuTrainFrag"
+        android:label="fragment_menu_train"
+        tools:layout="@layout/fragment_menu_train" />
 </navigation>

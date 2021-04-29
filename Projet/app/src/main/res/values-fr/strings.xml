@@ -38,6 +38,9 @@
     <string name="btn_learn">Découvrir</string>
     <string name="btn_train">"S'exercer"</string>
 
+    <string name="btn_train_eye">Trouver</string>
+    <string name="btn_train_write">Écriture</string>
+
     <string name="img_logo_toolbar">TODO</string>
     <string name="img_logo_invisible">TODO</string>
     <string name="img_return">TODO</string>

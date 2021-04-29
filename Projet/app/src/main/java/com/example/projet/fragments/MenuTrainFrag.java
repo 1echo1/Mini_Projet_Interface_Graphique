@@ -54,7 +54,10 @@ public class MenuTrainFrag extends Fragment {
         btn_col.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                TrainTypeChoiceFrag train_choice_frag= new TrainTypeChoiceFrag();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.train_menu_frag, train_choice_frag)
+                        .commit();
             }
         });
 
@@ -62,9 +65,9 @@ public class MenuTrainFrag extends Fragment {
         btn_num.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NumbersGameFrag numb_game_frag= new NumbersGameFrag();
+                TrainTypeChoiceFrag train_choice_frag= new TrainTypeChoiceFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.train_menu_frag, numb_game_frag)
+                        .replace(R.id.train_menu_frag, train_choice_frag)
                         .commit();
             }
         });
@@ -73,7 +76,10 @@ public class MenuTrainFrag extends Fragment {
         btn_veh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                TrainTypeChoiceFrag train_choice_frag= new TrainTypeChoiceFrag();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.train_menu_frag, train_choice_frag)
+                        .commit();
             }
         });
 
