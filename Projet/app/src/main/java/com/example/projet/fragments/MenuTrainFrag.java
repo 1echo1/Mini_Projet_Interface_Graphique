@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.projet.R;
+import com.example.projet.utils.Constants;
 
 
 public class MenuTrainFrag extends Fragment {
@@ -54,7 +55,11 @@ public class MenuTrainFrag extends Fragment {
         btn_col.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("train_type", Constants.TYPE_COLORS);
+
                 TrainTypeChoiceFrag train_choice_frag= new TrainTypeChoiceFrag();
+                train_choice_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.train_menu_frag, train_choice_frag)
                         .commit();
@@ -65,7 +70,11 @@ public class MenuTrainFrag extends Fragment {
         btn_num.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("train_type", Constants.TYPE_NUM);
+
                 TrainTypeChoiceFrag train_choice_frag= new TrainTypeChoiceFrag();
+                train_choice_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.train_menu_frag, train_choice_frag)
                         .commit();
@@ -76,7 +85,11 @@ public class MenuTrainFrag extends Fragment {
         btn_veh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("train_type", Constants.TYPE_VEH);
+
                 TrainTypeChoiceFrag train_choice_frag= new TrainTypeChoiceFrag();
+                train_choice_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.train_menu_frag, train_choice_frag)
                         .commit();

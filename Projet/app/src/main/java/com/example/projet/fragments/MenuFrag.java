@@ -46,6 +46,7 @@ public class MenuFrag extends Fragment {
         btn_learn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 MenuLearnFrag menu_learn_frag= new MenuLearnFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frag_menu, menu_learn_frag)
@@ -57,6 +58,7 @@ public class MenuFrag extends Fragment {
         btn_train.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 MenuTrainFrag menu_train_frag= new MenuTrainFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frag_menu, menu_train_frag)

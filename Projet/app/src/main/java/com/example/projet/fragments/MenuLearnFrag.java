@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.projet.R;
+import com.example.projet.models.LocaleHelper;
 
 public class MenuLearnFrag extends Fragment {
 
@@ -45,7 +46,6 @@ public class MenuLearnFrag extends Fragment {
             }
         });
     }
-
 
     public void setupMenu(View view){
         final TextView tv_train=view.findViewById(R.id.tv_train);

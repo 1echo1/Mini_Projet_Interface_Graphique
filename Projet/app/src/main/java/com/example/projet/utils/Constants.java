@@ -23,4 +23,8 @@ public class Constants {
     public static final int BOAT = 4;
     public static final int BIKE = 5;
 
+    public static final int TYPE_COLORS = 0;
+    public static final int TYPE_VEH = 1;
+    public static final int TYPE_NUM = 2;
+
 }
