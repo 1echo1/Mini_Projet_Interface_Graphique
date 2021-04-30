@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,13 +39,14 @@ public class TrainTypeChoiceFrag extends Fragment {
         btn_train_eye.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Log.d("YO","Helloo");
                 switch (type_game){
                     case Constants.TYPE_COLORS:
-                        NumbersGameFrag numbers_game_frag = new NumbersGameFrag();
+                      /*  NumbersGameFrag numbers_game_frag = new NumbersGameFrag();
                         getActivity().getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.train_choice_frag, numbers_game_frag)
-                                .commit();
+                                .commit();*/
+
                         break;
                     case Constants.TYPE_VEH:
                         /*NumbersGameFrag numbers_game_frag = new NumbersGameFrag();
@@ -53,16 +55,39 @@ public class TrainTypeChoiceFrag extends Fragment {
                                 .commit();*/
                         break;
                     case Constants.TYPE_NUM:
-                        /*NumbersGameFrag numbers_game_frag = new NumbersGameFrag();
+                        NumbersGameFrag numbers_game_frag = new NumbersGameFrag();
                         getActivity().getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.train_choice_frag, numbers_game_frag)
-                                .commit();*/
+                                .commit();
                         break;
 
                 }
-
-
             }
         });
+
+        final Button btn_close_choice=view.findViewById(R.id.btn_close_choice_t);
+
+        btn_close_choice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MenuTrainFrag menu_train_frag = new MenuTrainFrag();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.train_choice_frag, menu_train_frag)
+                        .commit();
+             }
+        });
+
+        final Button btn_close_choice_b=view.findViewById(R.id.btn_close_choice_b);
+
+        btn_close_choice_b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MenuTrainFrag menu_train_frag = new MenuTrainFrag();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.train_choice_frag, menu_train_frag)
+                        .commit();
+            }
+        });
+
     }
 }

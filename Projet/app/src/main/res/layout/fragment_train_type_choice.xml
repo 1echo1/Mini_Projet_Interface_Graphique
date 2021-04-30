@@ -1,69 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/train_choice_frag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginStart="32dp"
-    android:layout_marginTop="250dp"
-    android:layout_marginEnd="32dp"
-    android:layout_marginBottom="250dp"
-    android:background="@drawable/border"
     tools:context=".fragments.TrainTypeChoiceFrag">
 
-    <Button
-        android:id="@+id/btn_train_write"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/btn_train_write"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
-
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:scaleX="-0.8"
-        android:scaleY="-0.8"
-        android:src="@mipmap/ic_write_foreground"
-        app:layout_constraintEnd_toEndOf="@+id/btn_train_write"
-        app:layout_constraintStart_toStartOf="@+id/btn_train_write"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btn_train_eye"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_close_choice_b"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativ_ly"
+        android:layout_alignTop="@+id/relativ_ly"
+        android:layout_marginTop="250dp"
+        android:background="#00000000" />
+
+    <Button
+        android:id="@+id/btn_close_choice_t"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/relativ_ly"
+        android:layout_alignBottom="@+id/relativ_ly"
+        android:layout_marginBottom="250dp"
+        android:background="#00000000" />
+
+    <RelativeLayout
+        android:id="@+id/relativ_ly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/btn_train_eye"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_rowWeight="1"
-
-        android:layout_columnWeight="1"
-        android:layout_marginTop="16dp"
-
-        android:scaleX="-0.8"
-        android:scaleY="-0.8"
-        android:src="@mipmap/ic_find_foreground"
-        app:layout_constraintEnd_toEndOf="@+id/btn_train_eye"
-        app:layout_constraintStart_toStartOf="@+id/btn_train_eye"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="250dp"
+        android:background="@drawable/border">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/img_eye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+
+
+            android:scaleX="-0.8"
+            android:scaleY="-0.8"
+            android:src="@mipmap/ic_find_foreground"
+            tools:ignore="MissingConstraints" />
+
+
+        <ImageView
+            android:id="@+id/img_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:scaleX="-0.8"
+            android:scaleY="-0.8"
+
+            android:src="@mipmap/ic_write_foreground"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btn_train_eye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/img_eye"
+            android:layout_alignEnd="@+id/img_eye"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/btn_train_eye"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btn_train_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/img_write"
+            android:layout_alignEnd="@+id/img_write"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/btn_train_write"
+            tools:ignore="MissingConstraints" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
