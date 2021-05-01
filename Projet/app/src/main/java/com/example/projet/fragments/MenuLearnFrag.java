@@ -69,7 +69,10 @@ public class MenuLearnFrag extends Fragment {
         btn_num.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                NumsLearnFrag num_frag= new NumsLearnFrag();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.learn_menu_frag, num_frag)
+                        .commit();
             }
         });
 

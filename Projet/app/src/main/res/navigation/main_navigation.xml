@@ -23,6 +23,9 @@
         android:label="fragment_menu_learn"
         tools:layout="@layout/fragment_menu_learn" >
         <action
+            android:id="@+id/action_menuLearnFrag_to_vehiclesLearnFrag"
+            app:destination="@id/vehiclesLearnFrag" />
+        <action
             android:id="@+id/action_menuLearnFrag_to_colorsLearnFrag"
             app:destination="@id/colorsLearnFrag" />
     </fragment>
@@ -70,4 +73,9 @@
         android:name="com.example.projet.fragments.ColorsLearnFrag"
         android:label="fragment_colors_learn"
         tools:layout="@layout/fragment_colors_learn" />
+    <fragment
+        android:id="@+id/vehiclesLearnFrag"
+        android:name="com.example.projet.fragments.VehiclesLearnFrag"
+        android:label="fragment_vehicles_learn"
+        tools:layout="@layout/fragment_vehicles_learn" />
 </navigation>
