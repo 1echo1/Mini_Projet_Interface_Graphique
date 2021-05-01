@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_menuLearnFrag_to_colorsLearnFrag"
             app:destination="@id/colorsLearnFrag" />
+        <action
+            android:id="@+id/action_menuLearnFrag_to_numsLearnFrag"
+            app:destination="@id/numsLearnFrag" />
     </fragment>
     <fragment
         android:id="@+id/menuTrainFrag"
@@ -78,4 +81,9 @@
         android:name="com.example.projet.fragments.VehiclesLearnFrag"
         android:label="fragment_vehicles_learn"
         tools:layout="@layout/fragment_vehicles_learn" />
+    <fragment
+        android:id="@+id/numsLearnFrag"
+        android:name="com.example.projet.fragments.NumsLearnFrag"
+        android:label="fragment_nums_learn"
+        tools:layout="@layout/fragment_nums_learn" />
 </navigation>
