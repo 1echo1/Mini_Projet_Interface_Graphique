@@ -10,7 +10,6 @@
     tools:context=".fragments.MenuTrainFrag"
     android:clickable="true">
 
-
     <Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
@@ -94,7 +93,6 @@
             android:layout_marginRight="64dp"
             android:layout_marginBottom="20dp"
             android:background="#595959"
-            android:padding="0dp"
             android:text="@string/btn_colors" />
 
         <ImageView

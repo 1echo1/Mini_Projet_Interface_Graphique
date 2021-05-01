@@ -69,11 +69,10 @@ public class MenuTrainFrag extends Fragment {
             }
         });
 
-        final Button btn_num = view.findViewById(R.id.btn_numbers_game);
+        final Button btn_num=view.findViewById(R.id.btn_numbers_game);
         btn_num.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("MESS","CLICK NUMS");
                 Bundle bundle = new Bundle();
                 bundle.putInt("train_type", Constants.TYPE_NUM);
 

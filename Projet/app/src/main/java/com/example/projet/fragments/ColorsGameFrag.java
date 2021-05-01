@@ -27,11 +27,11 @@ public class ColorsGameFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_colors_game, container, false);
+        View view = inflater.inflate(R.layout.fragment_colors_game, container, false);
 
-         color_game=new Game(Constants.NBR_COLORS_TOTAL);
+        color_game = new Game(Constants.NBR_COLORS_TOTAL);
 
-        String locale="en";
+        String locale = "en";
 
         setupToolbar(view);
         setupReload(view, locale);
@@ -41,12 +41,12 @@ public class ColorsGameFrag extends Fragment {
         return view;
     }
 
-    private void setupToolbar(View view){
+    private void setupToolbar(View view) {
         final ImageView img_return = view.findViewById(R.id.img_return);
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MenuLearnFrag train_menu_frag= new MenuLearnFrag();
+                MenuTrainFrag train_menu_frag = new MenuTrainFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.color_game_frag, train_menu_frag)
                         .commit();
@@ -54,27 +54,27 @@ public class ColorsGameFrag extends Fragment {
         });
     }
 
-    private void setupReload(View view,String locale){
+    private void setupReload(View view, String locale) {
         final ImageView img_reload = view.findViewById(R.id.img_reload);
         img_reload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setupColors(view,locale);
-                setupColorChoice(view,locale);
+                setupColors(view, locale);
+                setupColorChoice(view, locale);
             }
         });
 
     }
 
-    private void setupColors(View view, String locale){
+    private void setupColors(View view, String locale) {
 
         final Button btn_col_1 = view.findViewById(R.id.btn_color_1);
         btn_col_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(color_game.verify_victory(color_game.get_cell(0))) {
-                    setupColors(view,locale);
-                    setupColorChoice(view,locale);
+                if (color_game.verify_victory(color_game.get_cell(0))) {
+                    setupColors(view, locale);
+                    setupColorChoice(view, locale);
                 }
             }
         });
@@ -83,9 +83,9 @@ public class ColorsGameFrag extends Fragment {
         btn_col_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(color_game.verify_victory(color_game.get_cell(1))) {
-                    setupColors(view,locale);
-                    setupColorChoice(view,locale);
+                if (color_game.verify_victory(color_game.get_cell(1))) {
+                    setupColors(view, locale);
+                    setupColorChoice(view, locale);
                 }
             }
         });
@@ -93,9 +93,9 @@ public class ColorsGameFrag extends Fragment {
         btn_col_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(color_game.verify_victory(color_game.get_cell(2))) {
-                    setupColors(view,locale);
-                    setupColorChoice(view,locale);
+                if (color_game.verify_victory(color_game.get_cell(2))) {
+                    setupColors(view, locale);
+                    setupColorChoice(view, locale);
                 }
             }
         });
@@ -104,21 +104,21 @@ public class ColorsGameFrag extends Fragment {
         btn_col_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(color_game.verify_victory(color_game.get_cell(3))) {
-                    setupColors(view,locale);
-                    setupColorChoice(view,locale);
+                if (color_game.verify_victory(color_game.get_cell(3))) {
+                    setupColors(view, locale);
+                    setupColorChoice(view, locale);
                 }
             }
         });
 
         color_game.choose_elements_display();
 
-        for(int i = 0; i<color_game.array.length; i++) {
+        for (int i = 0; i < color_game.array.length; i++) {
             Log.d("Array", String.valueOf(color_game.array[i]));
         }
 
 
-        for(int i = 0; i<color_game.array.length; i++) {
+        for (int i = 0; i < color_game.array.length; i++) {
             switch (color_game.get_cell(i)) {
                 case Constants.GREEN:
                     if (i == 0) {
@@ -212,7 +212,7 @@ public class ColorsGameFrag extends Fragment {
         }
     }
 
-    private void setupColorChoice(View view,String locale){
+    private void setupColorChoice(View view, String locale) {
         Context context;
         Resources resources;
 
@@ -221,9 +221,9 @@ public class ColorsGameFrag extends Fragment {
 
         final TextView text_color = view.findViewById(R.id.text_color);
 
-        int color=color_game.get_element_to_find();
+        int color = color_game.get_element_to_find();
 
-        switch (color){
+        switch (color) {
             case Constants.GREEN:
                 text_color.setText(resources.getString(R.string.clr_green));
                 break;
