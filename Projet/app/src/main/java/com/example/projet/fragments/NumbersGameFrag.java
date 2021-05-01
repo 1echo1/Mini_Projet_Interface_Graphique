@@ -35,6 +35,8 @@ public class NumbersGameFrag extends Fragment {
 
         num_game=new Game(Constants.NBR_NUMS_TOTAL);
 
+        Log.d("Mess","GAME NUM FRAG");
+
       //  Bundle bundle = getActivity().getIntent().getExtras();
         String locale = "fr";//bundle.getString("locale");
 

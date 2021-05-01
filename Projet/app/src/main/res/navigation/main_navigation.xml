@@ -35,5 +35,14 @@
         android:id="@+id/trainTypeChoiceFrag"
         android:name="com.example.projet.fragments.TrainTypeChoiceFrag"
         android:label="fragment_train_type_choice"
-        tools:layout="@layout/fragment_train_type_choice" />
+        tools:layout="@layout/fragment_train_type_choice" >
+        <action
+            android:id="@+id/action_trainTypeChoiceFrag_to_numbersGameFrag"
+            app:destination="@id/numbersGameFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/numbersGameFrag"
+        android:name="com.example.projet.fragments.NumbersGameFrag"
+        android:label="NumbersGameFrag"
+        tools:layout="@layout/fragment_numbers_game"/>
 </navigation>

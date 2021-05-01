@@ -28,6 +28,8 @@ public class TrainTypeChoiceFrag extends Fragment {
 
         int type_game=getArguments().getInt("train_type");
 
+        Log.d("Mess","CHOICE FRAG");
+
         setupChoice(view,type_game);
 
         return view;

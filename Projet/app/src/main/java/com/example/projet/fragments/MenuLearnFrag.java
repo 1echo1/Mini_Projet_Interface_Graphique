@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,10 +26,13 @@ public class MenuLearnFrag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+
         View view= inflater.inflate(R.layout.fragment_menu_learn, container, false);
 
         setupToolbar(view);
         setupMenu(view);
+
+        Log.d("Mess","MENU LEARN FRAG");
 
         return view;
     }

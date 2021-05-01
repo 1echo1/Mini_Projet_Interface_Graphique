@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,6 @@ import com.example.projet.models.LocaleHelper;
 
 public class MenuFrag extends Fragment {
 
-
     public MenuFrag() {
         // Required empty public constructor
     }
@@ -34,8 +34,9 @@ public class MenuFrag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_menu, container, false);
-
         setupMenu(view);
+
+        Log.d("Mess","MENU GRAG");
 
         return view;
     }
@@ -46,7 +47,7 @@ public class MenuFrag extends Fragment {
         btn_learn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Log.d("Mess","LEARN CLICK");
                 MenuLearnFrag menu_learn_frag= new MenuLearnFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frag_menu, menu_learn_frag)

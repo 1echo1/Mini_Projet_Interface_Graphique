@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,8 @@ public class MenuTrainFrag extends Fragment {
 
         setupToolbar(view);
         setupMenu(view);
+
+        Log.d("Mess","MENU TRAIN FRAG");
 
         return view;
     }
@@ -70,6 +73,7 @@ public class MenuTrainFrag extends Fragment {
         btn_num.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("MESS","CLICK NUMS");
                 Bundle bundle = new Bundle();
                 bundle.putInt("train_type", Constants.TYPE_NUM);
 
