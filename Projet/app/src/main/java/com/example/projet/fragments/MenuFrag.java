@@ -50,6 +50,8 @@ public class MenuFrag extends Fragment {
                 Log.d("Mess","LEARN CLICK");
                 MenuLearnFrag menu_learn_frag= new MenuLearnFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.fragment_open_enter,
+                                R.anim.fragment_close_exit)
                         .replace(R.id.frag_menu, menu_learn_frag)
                         .commit();
             }
@@ -62,6 +64,8 @@ public class MenuFrag extends Fragment {
 
                 MenuTrainFrag menu_train_frag= new MenuTrainFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.fragment_open_enter,
+                                R.anim.fragment_close_exit)
                         .replace(R.id.frag_menu, menu_train_frag)
                         .commit();
             }
