@@ -44,10 +44,10 @@ public class TrainTypeChoiceFrag extends Fragment {
                 Log.d("YO","Helloo");
                 switch (type_game){
                     case Constants.TYPE_COLORS:
-                      /*  NumbersGameFrag numbers_game_frag = new NumbersGameFrag();
+                        ColorsGameFrag colors_game_frag = new ColorsGameFrag();
                         getActivity().getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.train_choice_frag, numbers_game_frag)
-                                .commit();*/
+                                .replace(R.id.train_choice_frag, colors_game_frag)
+                                .commit();
 
                         break;
                     case Constants.TYPE_VEH:

@@ -53,9 +53,9 @@ public class NumbersGameFrag extends Fragment {
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MenuLearnFrag learn_menu_frag= new MenuLearnFrag();
+                MenuTrainFrag train_menu_frag= new MenuTrainFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.numbers_game_frag, learn_menu_frag)
+                        .replace(R.id.numbers_game_frag, train_menu_frag)
                         .commit();
             }
         });

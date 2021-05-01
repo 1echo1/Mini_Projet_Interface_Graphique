@@ -39,10 +39,18 @@
         <action
             android:id="@+id/action_trainTypeChoiceFrag_to_numbersGameFrag"
             app:destination="@id/numbersGameFrag" />
+        <action
+            android:id="@+id/action_trainTypeChoiceFrag_to_colorsGameFrag"
+            app:destination="@id/colorsGameFrag" />
     </fragment>
     <fragment
         android:id="@+id/numbersGameFrag"
         android:name="com.example.projet.fragments.NumbersGameFrag"
         android:label="NumbersGameFrag"
         tools:layout="@layout/fragment_numbers_game"/>
+    <fragment
+        android:id="@+id/colorsGameFrag"
+        android:name="com.example.projet.fragments.ColorsGameFrag"
+        android:label="fragment_colors_game"
+        tools:layout="@layout/fragment_colors_game" />
 </navigation>
