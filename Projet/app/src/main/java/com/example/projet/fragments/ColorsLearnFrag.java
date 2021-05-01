@@ -25,9 +25,23 @@ public class ColorsLearnFrag extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_colors_learn, container, false);
 
+        setupToolbar(view);
         setupList(view);
 
         return view;
+    }
+
+    private void setupToolbar(View view) {
+        final ImageView img_return = view.findViewById(R.id.img_return);
+        img_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MenuLearnFrag learn_menu_frag = new MenuLearnFrag();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.color_learn_frag, learn_menu_frag)
+                        .commit();
+            }
+        });
     }
 
     void setupList(View view){

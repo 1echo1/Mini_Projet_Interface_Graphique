@@ -21,7 +21,11 @@
         android:id="@+id/menuLearnFrag"
         android:name="com.example.projet.fragments.MenuLearnFrag"
         android:label="fragment_menu_learn"
-        tools:layout="@layout/fragment_menu_learn" />
+        tools:layout="@layout/fragment_menu_learn" >
+        <action
+            android:id="@+id/action_menuLearnFrag_to_colorsLearnFrag"
+            app:destination="@id/colorsLearnFrag" />
+    </fragment>
     <fragment
         android:id="@+id/menuTrainFrag"
         android:name="com.example.projet.fragments.MenuTrainFrag"
@@ -61,4 +65,9 @@
         android:name="com.example.projet.fragments.VehiclesGameFrag"
         android:label="fragment_vehicles_game"
         tools:layout="@layout/fragment_vehicles_game" />
+    <fragment
+        android:id="@+id/colorsLearnFrag"
+        android:name="com.example.projet.fragments.ColorsLearnFrag"
+        android:label="fragment_colors_learn"
+        tools:layout="@layout/fragment_colors_learn" />
 </navigation>
