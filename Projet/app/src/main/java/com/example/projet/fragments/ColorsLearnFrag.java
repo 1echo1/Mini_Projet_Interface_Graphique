@@ -1,6 +1,5 @@
 package com.example.projet.fragments;
 
-import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -12,14 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.projet.R;
-
-import java.util.List;
 
 public class ColorsLearnFrag extends Fragment {
 
@@ -36,7 +32,15 @@ public class ColorsLearnFrag extends Fragment {
 
     void setupList(View view){
 
-        final int colors_val[]={0xFFFF0000,0xFF66FFFF,0xFF000000,0xFFFFFFFF,0xFFFFB366,0xFFFFFF66,0xFF994D00,0xFF66FF66};
+        Drawable[] colors_val ={getActivity().getDrawable(R.drawable.rectangle_learn_red),
+                getActivity().getDrawable(R.drawable.rectangle_learn_blue),
+                getActivity().getDrawable(R.drawable.rectangle_learn_black),
+                getActivity().getDrawable(R.drawable.rectangle_learn_white),
+                getActivity().getDrawable(R.drawable.rectangle_learn_orange),
+                getActivity().getDrawable(R.drawable.rectangle_learn_yellow),
+                getActivity().getDrawable(R.drawable.rectangle_learn_brown),
+                getActivity().getDrawable(R.drawable.rectangle_learn_green),
+        };
 
         final ArrayAdapter<String> colors_list = new ArrayAdapter<String>(getActivity(), R.layout.list_item, R.id.tv_color_to_learn) {
             @NonNull
@@ -51,8 +55,7 @@ public class ColorsLearnFrag extends Fragment {
                // ImageButton btn_speaker = view.findViewById(R.id.btn_speaker);
 
                 tv_color.setText(color);
-                im_color.setBackgroundColor(colors_val[position]);
-                im_color.setImageDrawable(getActivity().getDrawable(R.drawable.rectangle_learn));
+                im_color.setImageDrawable(colors_val[position]);
 
                 return view;
             }
