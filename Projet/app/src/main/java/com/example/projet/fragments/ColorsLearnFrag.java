@@ -56,7 +56,7 @@ public class ColorsLearnFrag extends Fragment {
                 getActivity().getDrawable(R.drawable.rectangle_learn_green),
         };
 
-        final ArrayAdapter<String> colors_list = new ArrayAdapter<String>(getActivity(), R.layout.list_item, R.id.tv_color_to_learn) {
+        final ArrayAdapter<String> colors_list = new ArrayAdapter<String>(getActivity(), R.layout.list_item, R.id.tv_type_to_learn) {
             @NonNull
             @Override
             public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -64,8 +64,8 @@ public class ColorsLearnFrag extends Fragment {
 
                 String color=getItem(position);
 
-                ImageView im_color = view.findViewById(R.id.img_color_learn);
-                TextView tv_color = view.findViewById(R.id.tv_color_to_learn);
+                ImageView im_color = view.findViewById(R.id.img_type_learn);
+                TextView tv_color = view.findViewById(R.id.tv_type_to_learn);
                // ImageButton btn_speaker = view.findViewById(R.id.btn_speaker);
 
                 tv_color.setText(color);

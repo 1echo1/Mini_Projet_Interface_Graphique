@@ -77,7 +77,10 @@ public class MenuLearnFrag extends Fragment {
         btn_veh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                VehiclesLearnFrag veh_frag= new VehiclesLearnFrag();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.learn_menu_frag, veh_frag)
+                        .commit();
             }
         });
 

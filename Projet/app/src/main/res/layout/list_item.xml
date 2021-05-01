@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/img_color_learn"
+        android:id="@+id/img_type_learn"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
@@ -19,7 +19,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/tv_color_to_learn"
+        android:id="@+id/tv_type_to_learn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -28,7 +28,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_speaker"
-        app:layout_constraintStart_toEndOf="@+id/img_color_learn"
+        app:layout_constraintStart_toEndOf="@+id/img_type_learn"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -42,8 +42,8 @@
         android:scaleX="-0.4"
         android:scaleY="-0.5"
         android:src="@mipmap/ic_speaker_foreground"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_color_to_learn"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_type_to_learn"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintTop_toTopOf="@+id/tv_color_to_learn" />
+        app:layout_constraintTop_toTopOf="@+id/tv_type_to_learn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
