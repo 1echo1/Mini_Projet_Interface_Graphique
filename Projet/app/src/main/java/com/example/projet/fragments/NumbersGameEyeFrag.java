@@ -15,25 +15,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.projet.R;
-import com.example.projet.models.Game;
+import com.example.projet.models.GameEye;
 import com.example.projet.models.LocaleHelper;
 import com.example.projet.utils.Constants;
 
-public class NumbersGameFrag extends Fragment {
+public class NumbersGameEyeFrag extends Fragment {
 
-    public NumbersGameFrag() {
+    public NumbersGameEyeFrag() {
         // Required empty public constructor
     }
 
-    Game num_game;
+    GameEye num_game;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_numbers_game, container, false);
+        View view = inflater.inflate(R.layout.fragment_numbers_eye_game, container, false);
 
-        num_game = new Game(Constants.NBR_NUMS_TOTAL);
+        num_game = new GameEye(Constants.NBR_NUMS_TOTAL);
 
         Log.d("Mess", "GAME NUM FRAG");
 

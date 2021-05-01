@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/color_game_frag"
     android:layout_width="match_parent"
-    android:background="#F2F2F2"
     android:layout_height="match_parent"
-    android:id="@+id/color_learn_frag"
-    tools:context=".fragments.VehiclesGameFrag">
+    android:background="#F2F2F2"
+    tools:context=".fragments.ColorsGameEyeFrag">
 
     <Toolbar
         android:id="@+id/my_toolbar"
@@ -21,12 +20,12 @@
             android:id="@+id/img_return"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_gravity="left"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:contentDescription="@string/img_return"
             android:src="@mipmap/ic_return_foreground"
             android:visibility="visible"
-            android:layout_gravity="left"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="28dp" />
 
@@ -57,11 +56,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <GridLayout
-        android:id="@+id/girdL_veh"
+        android:id="@+id/girdL_col"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="32dp"
         android:layout_marginStart="32dp"
+
+        android:layout_marginTop="32dp"
 
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
@@ -70,11 +71,11 @@
         app:layout_constraintBottom_toTopOf="@+id/img_reload"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_veh"
+        app:layout_constraintTop_toBottomOf="@+id/text_color"
         tools:ignore="MissingConstraints">
 
-        <ImageButton
-            android:id="@+id/btn_veh_1"
+        <Button
+            android:id="@+id/btn_color_1"
             android:layout_width="wrap_content"
             android:layout_row="0"
             android:layout_rowWeight="1"
@@ -83,8 +84,8 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp" />
 
-        <ImageButton
-            android:id="@+id/btn_veh_3"
+        <Button
+            android:id="@+id/btn_color_3"
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:layout_column="0"
@@ -92,8 +93,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp" />
 
-        <ImageButton
-            android:id="@+id/btn_veh_2"
+        <Button
+            android:id="@+id/btn_color_2"
             android:layout_width="wrap_content"
             android:layout_row="0"
             android:layout_rowWeight="1"
@@ -102,8 +103,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp" />
 
-        <ImageButton
-            android:id="@+id/btn_veh_4"
+        <Button
+            android:id="@+id/btn_color_4"
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:layout_column="1"
@@ -113,17 +114,14 @@
     </GridLayout>
 
     <TextView
-        android:id="@+id/text_veh"
-        android:layout_width="0dp"
-        android:layout_height="32dp"
+        android:id="@+id/text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,12 +4,12 @@ import com.example.projet.utils.Constants;
 
 import java.util.Random;
 
-public class Game {
+public class GameEye {
     public int[] array;
     public int element_to_find;
     public int total_choices;
 
-    public Game(int total_choices){
+    public GameEye(int total_choices){
         this.total_choices=total_choices;
         this.array=new int[4];
     }

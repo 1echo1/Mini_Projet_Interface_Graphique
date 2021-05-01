@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/color_game_frag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2F2F2"
-    tools:context=".fragments.ColorsGameFrag">
+    android:id="@+id/numbers_game_frag"
+    tools:context=".fragments.NumbersGameEyeFrag">
 
     <Toolbar
         android:id="@+id/my_toolbar"
@@ -20,12 +20,12 @@
             android:id="@+id/img_return"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="left"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:contentDescription="@string/img_return"
             android:src="@mipmap/ic_return_foreground"
             android:visibility="visible"
+            android:layout_gravity="left"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="28dp" />
 
@@ -62,8 +62,6 @@
         android:layout_margin="32dp"
         android:layout_marginStart="32dp"
 
-        android:layout_marginTop="32dp"
-
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:columnCount="2"
@@ -71,50 +69,54 @@
         app:layout_constraintBottom_toTopOf="@+id/img_reload"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_color"
+        app:layout_constraintTop_toBottomOf="@+id/text_num"
         tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/btn_color_1"
+            android:id="@+id/btn_num_1"
             android:layout_width="wrap_content"
             android:layout_row="0"
             android:layout_rowWeight="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            android:textSize="50sp" />
 
         <Button
-            android:id="@+id/btn_color_3"
+            android:id="@+id/btn_num_3"
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            android:textSize="50sp" />
 
         <Button
-            android:id="@+id/btn_color_2"
+            android:id="@+id/btn_num_2"
             android:layout_width="wrap_content"
             android:layout_row="0"
             android:layout_rowWeight="1"
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            android:textSize="50sp" />
 
         <Button
-            android:id="@+id/btn_color_4"
+            android:id="@+id/btn_num_4"
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:textSize="50sp" />
     </GridLayout>
 
     <TextView
-        android:id="@+id/text_color"
+        android:id="@+id/text_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -124,4 +126,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

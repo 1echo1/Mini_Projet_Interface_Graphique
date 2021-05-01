@@ -58,19 +58,19 @@
     </fragment>
     <fragment
         android:id="@+id/numbersGameFrag"
-        android:name="com.example.projet.fragments.NumbersGameFrag"
+        android:name="com.example.projet.fragments.NumbersGameEyeFrag"
         android:label="NumbersGameFrag"
-        tools:layout="@layout/fragment_numbers_game"/>
+        tools:layout="@layout/fragment_numbers_eye_game"/>
     <fragment
         android:id="@+id/colorsGameFrag"
-        android:name="com.example.projet.fragments.ColorsGameFrag"
+        android:name="com.example.projet.fragments.ColorsGameEyeFrag"
         android:label="fragment_colors_game"
-        tools:layout="@layout/fragment_colors_game" />
+        tools:layout="@layout/fragment_colors_eye_game" />
     <fragment
         android:id="@+id/vehiclesGameFrag"
-        android:name="com.example.projet.fragments.VehiclesGameFrag"
+        android:name="com.example.projet.fragments.VehiclesGameEyeFrag"
         android:label="fragment_vehicles_game"
-        tools:layout="@layout/fragment_vehicles_game" />
+        tools:layout="@layout/fragment_vehicles_eye_game" />
     <fragment
         android:id="@+id/colorsLearnFrag"
         android:name="com.example.projet.fragments.ColorsLearnFrag"

@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.projet.R;
 import com.example.projet.utils.Constants;
@@ -44,20 +43,20 @@ public class TrainTypeChoiceFrag extends Fragment {
                 Log.d("YO", "Helloo");
                 switch (type_game) {
                     case Constants.TYPE_COLORS:
-                        ColorsGameFrag colors_game_frag = new ColorsGameFrag();
+                        ColorsGameEyeFrag colors_game_frag = new ColorsGameEyeFrag();
                         getActivity().getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.train_choice_frag, colors_game_frag)
                                 .commit();
 
                         break;
                     case Constants.TYPE_VEH:
-                        VehiclesGameFrag veh_game_frag = new VehiclesGameFrag();
+                        VehiclesGameEyeFrag veh_game_frag = new VehiclesGameEyeFrag();
                         getActivity().getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.train_choice_frag, veh_game_frag)
                                 .commit();
                         break;
                     case Constants.TYPE_NUM:
-                        NumbersGameFrag numbers_game_frag = new NumbersGameFrag();
+                        NumbersGameEyeFrag numbers_game_frag = new NumbersGameEyeFrag();
                         getActivity().getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.train_choice_frag, numbers_game_frag)
                                 .commit();

@@ -15,21 +15,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.projet.R;
-import com.example.projet.models.Game;
+import com.example.projet.models.GameEye;
 import com.example.projet.models.LocaleHelper;
 import com.example.projet.utils.Constants;
 
-public class ColorsGameFrag extends Fragment {
+public class ColorsGameEyeFrag extends Fragment {
 
-    Game color_game;
+    GameEye color_game;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_colors_game, container, false);
+        View view = inflater.inflate(R.layout.fragment_colors_eye_game, container, false);
 
-        color_game = new Game(Constants.NBR_COLORS_TOTAL);
+        color_game = new GameEye(Constants.NBR_COLORS_TOTAL);
 
         String locale = "en";
 
