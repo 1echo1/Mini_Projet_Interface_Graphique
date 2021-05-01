@@ -58,7 +58,10 @@ public class MenuLearnFrag extends Fragment {
         btn_col.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                ColorsLearnFrag colors_frag= new ColorsLearnFrag();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.learn_menu_frag, colors_frag)
+                        .commit();
             }
         });
 
