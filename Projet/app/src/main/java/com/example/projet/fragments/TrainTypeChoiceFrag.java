@@ -89,10 +89,11 @@ public class TrainTypeChoiceFrag extends Fragment {
                                 .commit();*/
                         break;
                     case Constants.TYPE_NUM:
-                        /*NumbersGameWriteFrag numbers_game_write_frag = new NumbersGameWriteFrag();
+                        NumbersGameWriteFrag num_game_write_frag = new NumbersGameWriteFrag();
                         getActivity().getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.train_choice_frag, numbers_game_write_frag)
-                                .commit();*/
+                                .replace(R.id.train_choice_frag, num_game_write_frag)
+                                .addToBackStack(null)
+                                .commit();
                         break;
 
                 }
@@ -104,13 +105,11 @@ public class TrainTypeChoiceFrag extends Fragment {
         btn_close_choice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Mess","CLIIIICK");
                 MenuTrainFrag menu_train_frag = new MenuTrainFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.train_choice_frag, menu_train_frag)
                         .addToBackStack(null)
                         .commit();
-                //getActivity().getFragmentManager().popBackStack();
             }
         });
 
@@ -119,7 +118,6 @@ public class TrainTypeChoiceFrag extends Fragment {
         btn_close_choice_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Mess","CLIIIICK");
                 MenuTrainFrag menu_train_frag = new MenuTrainFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.train_choice_frag, menu_train_frag)

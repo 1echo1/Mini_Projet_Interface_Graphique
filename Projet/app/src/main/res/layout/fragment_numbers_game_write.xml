@@ -1,14 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/num_game_write_frag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.NumbersGameWriteFrag">
+    android:background="#F2F2F2"
+    tools:context=".fragments.NumbersGameWriteFrag"
+    android:clickable="true">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Toolbar
+        android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="#595959"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/img_return"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/img_return"
+            android:src="@mipmap/ic_return_foreground"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="28dp" />
+
+        <ImageView
+            android:id="@+id/img_logo_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/img_logo_toolbar"
+            android:src="@mipmap/ic_logo_foreground"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="28dp" />
+    </Toolbar>
+
+    <TextView
+        android:id="@+id/tv_num_write"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:text="9"
+        android:textColor="@color/black"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toTopOf="@+id/input_num_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_num_1"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="200dp"
+        app:hintTextColor="@color/black"
+        android:background="@drawable/border_no_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_check"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+
+        android:id="@+id/btn_check"
+        android:layout_width="86dp"
+        android:layout_height="71dp"
+        android:background="#F2F2F2"
+        android:rotation="180"
+        android:scaleX="-0.4"
+        android:scaleY="-0.5"
+        android:src="@mipmap/ic_check_foreground"
+        app:layout_constraintBottom_toBottomOf="@+id/input_num_1"
+        app:layout_constraintEnd_toEndOf="@+id/tv_num_write"
+        app:layout_constraintTop_toTopOf="@+id/input_num_1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
