@@ -49,6 +49,6 @@ Deux animations sont utilisées. La première quand on va vert MenuLearn depuis 
   
 
 
-## Changement de langue
+## Changement de langue:
 
 La classe LocaleHelper a été récupérée, dans la page https://devdeeds.com/android-change-language-at-runtime/ l'auteur est Jayakrishnan P.M.
