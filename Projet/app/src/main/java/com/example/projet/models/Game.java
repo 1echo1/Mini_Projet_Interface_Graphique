@@ -112,7 +112,7 @@ public class Game {
     }
 
     public Boolean verify_write_victory(String input, int type) {
-        
+
         boolean victory = false;
 
         switch (type) {

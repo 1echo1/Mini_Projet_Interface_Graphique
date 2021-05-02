@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_trainTypeChoiceFrag_to_numbersGameWriteFrag"
             app:destination="@id/numbersGameWriteFrag" />
+        <action
+            android:id="@+id/action_trainTypeChoiceFrag_to_vehiclesGameWriteFrag"
+            app:destination="@id/vehiclesGameWriteFrag" />
     </fragment>
     <fragment
         android:id="@+id/numbersGameFrag"
@@ -102,4 +105,9 @@
         android:name="com.example.projet.fragments.NumbersGameWriteFrag"
         android:label="fragment_numbers_game_write"
         tools:layout="@layout/fragment_numbers_game_write" />
+    <fragment
+        android:id="@+id/vehiclesGameWriteFrag"
+        android:name="com.example.projet.fragments.VehiclesGameWriteFrag"
+        android:label="fragment_vehicles_game_write"
+        tools:layout="@layout/fragment_vehicles_game_write" />
 </navigation>
