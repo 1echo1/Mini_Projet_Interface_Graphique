@@ -10,28 +10,11 @@ Voici le logo de l'app:
 
 Elle est disponible en anglais et en français.
 
-## Activités
+## Navigation:
 
-L'application présente 4 activités explicites:
+La navigation est la suivante:
 
-Menu:
-
-![menu_20](https://user-images.githubusercontent.com/48416661/109683091-50b47980-7b7f-11eb-85e9-808fe169f022.jpg)
-
-
-Jeu des couleurs:
-
-![colors_20](https://user-images.githubusercontent.com/48416661/109683055-44c8b780-7b7f-11eb-9e92-05cb493d751b.jpg)
-
-
-Jeu des véhicules:
-
-![vehicles_1_20](https://user-images.githubusercontent.com/48416661/109683226-6f1a7500-7b7f-11eb-9e7d-abf754e73bc4.jpg)
-
-
-Jeu des numéros:
-
-![numeros_20](https://user-images.githubusercontent.com/48416661/109683166-61fd8600-7b7f-11eb-8936-6b04599d114c.jpg)
+![Screenshot from 2021-05-02 23-07-06](https://user-images.githubusercontent.com/48416661/116827824-6bb16300-ab9b-11eb-9528-bf4c319f4280.png)
 
 
 ## Changement de langue
