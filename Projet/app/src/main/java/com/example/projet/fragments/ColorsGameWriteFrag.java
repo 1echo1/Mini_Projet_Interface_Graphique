@@ -79,9 +79,14 @@ public class ColorsGameWriteFrag extends Fragment {
         btn_check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (color_game.verify_write_victory(text.getText().toString(),Constants.TYPE_COLORS)) {
+                    Log.d("Mess", "Victory");
                     setupColors(view, locale);
+                }else{
+                    Log.d("Mess", "NOOOOP");
                 }
+
             }
         });
 

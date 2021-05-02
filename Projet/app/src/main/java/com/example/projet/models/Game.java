@@ -14,14 +14,13 @@ public class Game {
     public int[] array;
     public int element_to_find;
     public int total_choices;
-    Context context;
 
     private ArrayList<String> color_val = new ArrayList<String>();
     private ArrayList<String> num_val = new ArrayList<String>();
     private ArrayList<String> veh_val = new ArrayList<String>();
 
     public Game(int total_choices,Context context) {
-        Log.d("Mess",context.getString(R.string.clr_blue));
+
         this.total_choices = total_choices;
         this.array = new int[4];
 
@@ -101,6 +100,7 @@ public class Game {
                 rand_num = rand.nextInt(Constants.NBR_VEH_TOTAL - 1);
                 break;
         }
+        element_to_find =rand_num;
         return rand_num;
     }
 
@@ -116,23 +116,24 @@ public class Game {
 
         boolean victory = false;
 
-       /* switch (type) {
+        switch (type) {
             case Constants.TYPE_COLORS:
-                if (input == color_val[this.element_to_find]) {
+                if (color_val.get(this.element_to_find).equalsIgnoreCase(input)
+                        || (color_val.get(this.element_to_find)+" ").equalsIgnoreCase(input) ){
                     victory = true;
                 }
                 break;
             case Constants.TYPE_NUM:
-                if (input == num_val[this.element_to_find]) {
+                if (num_val.get(this.element_to_find).equalsIgnoreCase(input)) {
                     victory = true;
                 }
                 break;
             case Constants.TYPE_VEH:
-                if (input == veh_val[this.element_to_find]) {
+                if (veh_val.get(this.element_to_find).equalsIgnoreCase(input)) {
                     victory = true;
                 }
                 break;
-        }*/
+        }
         return victory;
     }
 }
