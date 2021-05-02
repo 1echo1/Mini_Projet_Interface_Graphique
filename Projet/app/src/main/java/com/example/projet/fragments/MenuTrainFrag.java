@@ -45,6 +45,7 @@ public class MenuTrainFrag extends Fragment {
                 MenuFrag menu_frag= new MenuFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.train_menu_frag, menu_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });
@@ -65,6 +66,7 @@ public class MenuTrainFrag extends Fragment {
                 train_choice_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.train_menu_frag, train_choice_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });
@@ -80,6 +82,7 @@ public class MenuTrainFrag extends Fragment {
                 train_choice_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.train_menu_frag, train_choice_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });
@@ -95,6 +98,7 @@ public class MenuTrainFrag extends Fragment {
                 train_choice_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.train_menu_frag, train_choice_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });

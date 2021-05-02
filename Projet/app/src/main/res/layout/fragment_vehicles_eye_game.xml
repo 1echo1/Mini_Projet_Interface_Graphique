@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:background="#F2F2F2"
     android:layout_height="match_parent"
-    android:id="@+id/color_learn_frag"
-    tools:context=".fragments.VehiclesGameEyeFrag">
+    android:id="@+id/veh_game_eye_frag"
+    tools:context=".fragments.VehiclesGameEyeFrag"
+    android:clickable="true">
 
     <Toolbar
         android:id="@+id/my_toolbar"

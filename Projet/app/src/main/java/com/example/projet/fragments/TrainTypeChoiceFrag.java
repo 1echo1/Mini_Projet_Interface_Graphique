@@ -46,6 +46,7 @@ public class TrainTypeChoiceFrag extends Fragment {
                         ColorsGameEyeFrag colors_game_frag = new ColorsGameEyeFrag();
                         getActivity().getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.train_choice_frag, colors_game_frag)
+                                .addToBackStack(null)
                                 .commit();
 
                         break;
@@ -53,13 +54,45 @@ public class TrainTypeChoiceFrag extends Fragment {
                         VehiclesGameEyeFrag veh_game_frag = new VehiclesGameEyeFrag();
                         getActivity().getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.train_choice_frag, veh_game_frag)
+                                .addToBackStack(null)
                                 .commit();
                         break;
                     case Constants.TYPE_NUM:
                         NumbersGameEyeFrag numbers_game_frag = new NumbersGameEyeFrag();
                         getActivity().getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.train_choice_frag, numbers_game_frag)
+                                .addToBackStack(null)
                                 .commit();
+                        break;
+                }
+            }
+        });
+
+        final Button btn_train_write = view.findViewById(R.id.btn_train_write);
+
+        btn_train_write.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (type_game) {
+                    case Constants.TYPE_COLORS:
+                        ColorsGameWriteFrag color_game_write_frag = new ColorsGameWriteFrag();
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.train_choice_frag, color_game_write_frag)
+                                .addToBackStack(null)
+                                .commit();
+
+                        break;
+                    case Constants.TYPE_VEH:
+                        /*VehiclesGameWriteFrag veh_game_write_frag = new VehiclesGameWriteFrag();
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.train_choice_frag, veh_game_write_frag)
+                                .commit();*/
+                        break;
+                    case Constants.TYPE_NUM:
+                        /*NumbersGameWriteFrag numbers_game_write_frag = new NumbersGameWriteFrag();
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.train_choice_frag, numbers_game_write_frag)
+                                .commit();*/
                         break;
 
                 }
@@ -71,10 +104,13 @@ public class TrainTypeChoiceFrag extends Fragment {
         btn_close_choice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("Mess","CLIIIICK");
                 MenuTrainFrag menu_train_frag = new MenuTrainFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.train_choice_frag, menu_train_frag)
+                        .addToBackStack(null)
                         .commit();
+                //getActivity().getFragmentManager().popBackStack();
             }
         });
 
@@ -83,9 +119,11 @@ public class TrainTypeChoiceFrag extends Fragment {
         btn_close_choice_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("Mess","CLIIIICK");
                 MenuTrainFrag menu_train_frag = new MenuTrainFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.train_choice_frag, menu_train_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });

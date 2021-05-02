@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="#F2F2F2"
     android:id="@+id/numbers_game_frag"
-    tools:context=".fragments.NumbersGameEyeFrag">
+    tools:context=".fragments.NumbersGameEyeFrag"
+    android:clickable="true">
 
     <Toolbar
         android:id="@+id/my_toolbar"

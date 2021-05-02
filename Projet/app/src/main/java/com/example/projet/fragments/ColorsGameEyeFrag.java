@@ -15,13 +15,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.projet.R;
-import com.example.projet.models.GameEye;
+import com.example.projet.models.Game;
 import com.example.projet.models.LocaleHelper;
 import com.example.projet.utils.Constants;
 
 public class ColorsGameEyeFrag extends Fragment {
 
-    GameEye color_game;
+    Game color_game;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,7 +29,7 @@ public class ColorsGameEyeFrag extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_colors_eye_game, container, false);
 
-        color_game = new GameEye(Constants.NBR_COLORS_TOTAL);
+        color_game = new Game(Constants.NBR_COLORS_TOTAL,getContext());
 
         String locale = "en";
 
@@ -49,6 +49,7 @@ public class ColorsGameEyeFrag extends Fragment {
                 MenuTrainFrag train_menu_frag = new MenuTrainFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.color_game_frag, train_menu_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });
@@ -72,7 +73,7 @@ public class ColorsGameEyeFrag extends Fragment {
         btn_col_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (color_game.verify_victory(color_game.get_cell(0))) {
+                if (color_game.verify_find_victory(color_game.get_cell(0))) {
                     setupColors(view, locale);
                     setupColorChoice(view, locale);
                 }
@@ -83,7 +84,7 @@ public class ColorsGameEyeFrag extends Fragment {
         btn_col_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (color_game.verify_victory(color_game.get_cell(1))) {
+                if (color_game.verify_find_victory(color_game.get_cell(1))) {
                     setupColors(view, locale);
                     setupColorChoice(view, locale);
                 }
@@ -93,7 +94,7 @@ public class ColorsGameEyeFrag extends Fragment {
         btn_col_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (color_game.verify_victory(color_game.get_cell(2))) {
+                if (color_game.verify_find_victory(color_game.get_cell(2))) {
                     setupColors(view, locale);
                     setupColorChoice(view, locale);
                 }
@@ -104,7 +105,7 @@ public class ColorsGameEyeFrag extends Fragment {
         btn_col_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (color_game.verify_victory(color_game.get_cell(3))) {
+                if (color_game.verify_find_victory(color_game.get_cell(3))) {
                     setupColors(view, locale);
                     setupColorChoice(view, locale);
                 }

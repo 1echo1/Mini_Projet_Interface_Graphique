@@ -39,6 +39,7 @@ public class VehiclesLearnFrag extends Fragment {
                 MenuLearnFrag learn_menu_frag = new MenuLearnFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.veh_learn_frag, learn_menu_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });

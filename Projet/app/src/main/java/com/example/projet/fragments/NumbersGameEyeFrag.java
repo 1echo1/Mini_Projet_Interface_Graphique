@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.projet.R;
-import com.example.projet.models.GameEye;
+import com.example.projet.models.Game;
 import com.example.projet.models.LocaleHelper;
 import com.example.projet.utils.Constants;
 
@@ -25,7 +25,7 @@ public class NumbersGameEyeFrag extends Fragment {
         // Required empty public constructor
     }
 
-    GameEye num_game;
+    Game num_game;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,7 +33,7 @@ public class NumbersGameEyeFrag extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_numbers_eye_game, container, false);
 
-        num_game = new GameEye(Constants.NBR_NUMS_TOTAL);
+        num_game = new Game(Constants.NBR_NUMS_TOTAL,getContext());
 
         Log.d("Mess", "GAME NUM FRAG");
 
@@ -56,6 +56,7 @@ public class NumbersGameEyeFrag extends Fragment {
                 MenuTrainFrag train_menu_frag = new MenuTrainFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.numbers_game_frag, train_menu_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });
@@ -73,14 +74,13 @@ public class NumbersGameEyeFrag extends Fragment {
 
     }
 
-
     private void setupNumbers(String locale, View view) {
 
         final Button btn_num_1 = view.findViewById(R.id.btn_num_1);
         btn_num_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (num_game.verify_victory(num_game.get_cell(0))) {
+                if (num_game.verify_find_victory(num_game.get_cell(0))) {
                     setupNumbers(locale, view);
                     setupNumChoice(locale, view);
                 }
@@ -91,7 +91,7 @@ public class NumbersGameEyeFrag extends Fragment {
         btn_num_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (num_game.verify_victory(num_game.get_cell(1))) {
+                if (num_game.verify_find_victory(num_game.get_cell(1))) {
                     setupNumbers(locale, view);
                     setupNumChoice(locale, view);
                 }
@@ -102,7 +102,7 @@ public class NumbersGameEyeFrag extends Fragment {
         btn_num_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (num_game.verify_victory(num_game.get_cell(2))) {
+                if (num_game.verify_find_victory(num_game.get_cell(2))) {
                     setupNumbers(locale, view);
                     setupNumChoice(locale, view);
                 }
@@ -113,7 +113,7 @@ public class NumbersGameEyeFrag extends Fragment {
         btn_num_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (num_game.verify_victory(num_game.get_cell(3))) {
+                if (num_game.verify_find_victory(num_game.get_cell(3))) {
                     setupNumbers(locale, view);
                     setupNumChoice(locale, view);
                 }

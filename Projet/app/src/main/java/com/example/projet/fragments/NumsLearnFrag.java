@@ -39,6 +39,7 @@ public class NumsLearnFrag extends Fragment {
                 MenuLearnFrag learn_menu_frag = new MenuLearnFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.num_learn_frag, learn_menu_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });

@@ -46,6 +46,7 @@ public class MenuLearnFrag extends Fragment {
                 MenuFrag menu_frag= new MenuFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.learn_menu_frag, menu_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });
@@ -61,6 +62,7 @@ public class MenuLearnFrag extends Fragment {
                 ColorsLearnFrag colors_frag= new ColorsLearnFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.learn_menu_frag, colors_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });
@@ -72,6 +74,7 @@ public class MenuLearnFrag extends Fragment {
                 NumsLearnFrag num_frag= new NumsLearnFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.learn_menu_frag, num_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });
@@ -83,6 +86,7 @@ public class MenuLearnFrag extends Fragment {
                 VehiclesLearnFrag veh_frag= new VehiclesLearnFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.learn_menu_frag, veh_frag)
+                        .addToBackStack(null)
                         .commit();
             }
         });
