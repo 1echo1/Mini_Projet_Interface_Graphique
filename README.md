@@ -1,4 +1,6 @@
-# Mini Projet Interface Graphique
+# Projet Interface Graphique
+
+Le projet se retrouve dans le dossier Projet. Le dossier Mini_Projet est une ancienne version.
 
 ## Application
 
