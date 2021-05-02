@@ -34,15 +34,15 @@ D'autre part nous avons la partie Train. On peut s'entraîner de deux façons.
 
 ## Animations:
 
-Deux animations sont utilisées. La première quand on va vert MenuLearn depuis le menu, et la deuxième lorsqu'on va du menu vers MenuTrain.
+Deux animations sont utilisées. La première quand on va vers MenuLearn depuis le menu, et la deuxième lorsqu'on va du menu vers MenuTrain.
 
 
 ## TODO:
 
-  -Bugg: Superposition de fragments: On peut cliquer sur des boutons qui appartienne à l'ancien fragment.
+  -Bugg: Superposition de fragments: On peut cliquer sur des boutons qui appartiennent à l'ancien fragment.
   -Bugg: Bouton retour et "colors" depuis "menu train" ne fonctionnent si on les clique en premier.
   
-  -Add: Audios lorqu'on clique sur l'icone de l'haut-parleur dans Learn.
+  -Add: Audios lorqu'on clique sur l'icône du haut-parleur dans Learn.
   -Add: Plus de commentaires.
   -Add: Fire base.
   -Add: Documentation.
