@@ -3,6 +3,7 @@ package com.example.projet.fragments;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -37,6 +39,7 @@ public class NumsLearnFrag extends Fragment {
         resources = context.getResources();
 
         setupToolbar(view);
+        //setupMp3(view, locale);
         setupList(view, resources);
 
         return view;
@@ -59,6 +62,21 @@ public class NumsLearnFrag extends Fragment {
             }
         });
     }
+
+    /*void setupMp3(View view, String locale){
+        final ImageButton speak=view.findViewById(R.id.btn_speaker);
+        final MediaPlayer mp=  MediaPlayer.create(getActivity(),R.raw.un);
+        speak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(locale=="fr"){
+                    mp.start();
+                }
+            }
+        });
+
+
+    }*/
 
     void setupList(View view, Resources resources){
         TextView tv_num=view.findViewById(R.id.tv_num);
