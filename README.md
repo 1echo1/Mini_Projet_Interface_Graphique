@@ -16,7 +16,7 @@ La navigation est la suivante:
 
 ![Screenshot from 2021-05-02 23-07-06](https://user-images.githubusercontent.com/48416661/116827824-6bb16300-ab9b-11eb-9528-bf4c319f4280.png)
 
-D'une part on a la partie Learn, qui est constitué de liste. Voici l'exemple pour les couleurs:
+D'une part on a la partie Learn, qui est constitué de listes. Voici l'exemple pour les couleurs:
 
 ![Screenshot_20210502_231246_com example projet(1)](https://user-images.githubusercontent.com/48416661/116828047-9c45cc80-ab9c-11eb-8611-b33c75f8f268.jpg)
 
