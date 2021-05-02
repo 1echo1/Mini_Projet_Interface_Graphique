@@ -42,11 +42,15 @@ Deux animations sont utilisées. La première quand on va vers MenuLearn depuis 
 ## TODO:
 
   -Bugg: Superposition de fragments: On peut cliquer sur des boutons qui appartiennent à l'ancien fragment.
+  
   -Bugg: Bouton retour et "colors" depuis "menu train" ne fonctionnent si on les clique en premier.
   
   -Add: Audios lorqu'on clique sur l'icône du haut-parleur dans Learn.
+  
   -Add: Plus de commentaires.
+  
   -Add: Fire base.
+  
   -Add: Documentation.
   
 
