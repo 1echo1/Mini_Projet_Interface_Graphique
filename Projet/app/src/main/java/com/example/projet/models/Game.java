@@ -112,8 +112,7 @@ public class Game {
     }
 
     public Boolean verify_write_victory(String input, int type) {
-
-
+        
         boolean victory = false;
 
         switch (type) {
@@ -124,12 +123,14 @@ public class Game {
                 }
                 break;
             case Constants.TYPE_NUM:
-                if (num_val.get(this.element_to_find).equalsIgnoreCase(input)) {
+                if (num_val.get(this.element_to_find).equalsIgnoreCase(input)
+                        || (num_val.get(this.element_to_find)+" ").equalsIgnoreCase(input)) {
                     victory = true;
                 }
                 break;
             case Constants.TYPE_VEH:
-                if (veh_val.get(this.element_to_find).equalsIgnoreCase(input)) {
+                if (veh_val.get(this.element_to_find).equalsIgnoreCase(input)
+                        || (veh_val.get(this.element_to_find)+" ").equalsIgnoreCase(input)) {
                     victory = true;
                 }
                 break;

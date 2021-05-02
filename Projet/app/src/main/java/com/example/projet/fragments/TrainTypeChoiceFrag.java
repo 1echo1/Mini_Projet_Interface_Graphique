@@ -83,10 +83,10 @@ public class TrainTypeChoiceFrag extends Fragment {
 
                         break;
                     case Constants.TYPE_VEH:
-                        /*VehiclesGameWriteFrag veh_game_write_frag = new VehiclesGameWriteFrag();
+                        VehiclesGameWriteFrag veh_game_write_frag = new VehiclesGameWriteFrag();
                         getActivity().getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.train_choice_frag, veh_game_write_frag)
-                                .commit();*/
+                                .commit();
                         break;
                     case Constants.TYPE_NUM:
                         NumbersGameWriteFrag num_game_write_frag = new NumbersGameWriteFrag();
