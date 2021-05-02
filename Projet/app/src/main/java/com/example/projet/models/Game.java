@@ -19,37 +19,37 @@ public class Game {
     private ArrayList<String> num_val = new ArrayList<String>();
     private ArrayList<String> veh_val = new ArrayList<String>();
 
-    public Game(int total_choices,Context context) {
+    public Game(int total_choices, Resources resources) {
 
         this.total_choices = total_choices;
         this.array = new int[4];
 
-        color_val.add(context.getString(R.string.clr_orange));
-        color_val.add(context.getString(R.string.clr_blue));
-        color_val.add(context.getString(R.string.clr_green));
-        color_val.add(context.getString(R.string.clr_yellow));
-        color_val.add(context.getString(R.string.clr_red));
-        color_val.add(context.getString(R.string.clr_black));
-        color_val.add(context.getString(R.string.clr_white));
-        color_val.add(context.getString(R.string.clr_brown));
+        color_val.add(resources.getString(R.string.clr_orange));
+        color_val.add(resources.getString(R.string.clr_blue));
+        color_val.add(resources.getString(R.string.clr_green));
+        color_val.add(resources.getString(R.string.clr_yellow));
+        color_val.add(resources.getString(R.string.clr_red));
+        color_val.add(resources.getString(R.string.clr_black));
+        color_val.add(resources.getString(R.string.clr_white));
+        color_val.add(resources.getString(R.string.clr_brown));
 
-        num_val.add(context.getString(R.string.num_zero));
-        num_val.add(context.getString(R.string.num_one));
-        num_val.add(context.getString(R.string.num_two));
-        num_val.add(context.getString(R.string.num_three));
-        num_val.add(context.getString(R.string.num_four));
-        num_val.add(context.getString(R.string.num_five));
-        num_val.add(context.getString(R.string.num_six));
-        num_val.add(context.getString(R.string.num_seven));
-        num_val.add(context.getString(R.string.num_eight));
-        num_val.add(context.getString(R.string.num_nine));
+        num_val.add(resources.getString(R.string.num_zero));
+        num_val.add(resources.getString(R.string.num_one));
+        num_val.add(resources.getString(R.string.num_two));
+        num_val.add(resources.getString(R.string.num_three));
+        num_val.add(resources.getString(R.string.num_four));
+        num_val.add(resources.getString(R.string.num_five));
+        num_val.add(resources.getString(R.string.num_six));
+        num_val.add(resources.getString(R.string.num_seven));
+        num_val.add(resources.getString(R.string.num_eight));
+        num_val.add(resources.getString(R.string.num_nine));
 
-        veh_val.add(context.getString(R.string.veh_car));
-        veh_val.add(context.getString(R.string.veh_moto));
-        veh_val.add(context.getString(R.string.veh_truck));
-        veh_val.add(context.getString(R.string.veh_bus));
-        veh_val.add(context.getString(R.string.veh_boat));
-        veh_val.add(context.getString(R.string.veh_bike));
+        veh_val.add(resources.getString(R.string.veh_car));
+        veh_val.add(resources.getString(R.string.veh_moto));
+        veh_val.add(resources.getString(R.string.veh_truck));
+        veh_val.add(resources.getString(R.string.veh_bus));
+        veh_val.add(resources.getString(R.string.veh_boat));
+        veh_val.add(resources.getString(R.string.veh_bike));
     }
 
     public int get_cell(int indice) {

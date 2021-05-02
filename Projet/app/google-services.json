@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "561701401243",
+    "project_id": "projet-interface-graphique",
+    "storage_bucket": "projet-interface-graphique.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561701401243:android:3b8075080e5b1abfb0cc3e",
+        "android_client_info": {
+          "package_name": "com.example.projet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561701401243-b4vsferbejh5v2i3acv12g8pod0k9ivk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8xDNWLYrSWSb_IckWqndlv-2FlsWKbs8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561701401243-b4vsferbejh5v2i3acv12g8pod0k9ivk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

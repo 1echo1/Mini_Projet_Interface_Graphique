@@ -29,14 +29,22 @@ public class ColorsGameEyeFrag extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_colors_eye_game, container, false);
 
-        color_game = new Game(Constants.NBR_COLORS_TOTAL,getContext());
 
-        String locale = "en";
+
+        String locale = getArguments().getString("locale");
+
+        Context context;
+        Resources resources;
+
+        context = LocaleHelper.setLocale(getActivity(), locale);
+        resources = context.getResources();
+
+        color_game = new Game(Constants.NBR_COLORS_TOTAL, resources);
 
         setupToolbar(view);
-        setupReload(view, locale);
-        setupColors(view, locale);
-        setupColorChoice(view, locale);
+        setupReload(view, resources);
+        setupColors(view, resources);
+        setupColorChoice(view, resources);
 
         return view;
     }
@@ -46,7 +54,11 @@ public class ColorsGameEyeFrag extends Fragment {
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
+
                 MenuTrainFrag train_menu_frag = new MenuTrainFrag();
+                train_menu_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.color_game_frag, train_menu_frag)
                         .addToBackStack(null)
@@ -55,27 +67,28 @@ public class ColorsGameEyeFrag extends Fragment {
         });
     }
 
-    private void setupReload(View view, String locale) {
+    private void setupReload(View view, Resources resources) {
         final ImageView img_reload = view.findViewById(R.id.img_reload);
         img_reload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setupColors(view, locale);
-                setupColorChoice(view, locale);
+                setupColors(view, resources);
+                setupColorChoice(view, resources);
             }
         });
 
     }
 
-    private void setupColors(View view, String locale) {
+    private void setupColors(View view, Resources resources) {
 
         final Button btn_col_1 = view.findViewById(R.id.btn_color_1);
+
         btn_col_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (color_game.verify_find_victory(color_game.get_cell(0))) {
-                    setupColors(view, locale);
-                    setupColorChoice(view, locale);
+                    setupColors(view, resources);
+                    setupColorChoice(view, resources);
                 }
             }
         });
@@ -85,8 +98,8 @@ public class ColorsGameEyeFrag extends Fragment {
             @Override
             public void onClick(View v) {
                 if (color_game.verify_find_victory(color_game.get_cell(1))) {
-                    setupColors(view, locale);
-                    setupColorChoice(view, locale);
+                    setupColors(view, resources);
+                    setupColorChoice(view, resources);
                 }
             }
         });
@@ -95,8 +108,8 @@ public class ColorsGameEyeFrag extends Fragment {
             @Override
             public void onClick(View v) {
                 if (color_game.verify_find_victory(color_game.get_cell(2))) {
-                    setupColors(view, locale);
-                    setupColorChoice(view, locale);
+                    setupColors(view, resources);
+                    setupColorChoice(view, resources);
                 }
             }
         });
@@ -106,8 +119,8 @@ public class ColorsGameEyeFrag extends Fragment {
             @Override
             public void onClick(View v) {
                 if (color_game.verify_find_victory(color_game.get_cell(3))) {
-                    setupColors(view, locale);
-                    setupColorChoice(view, locale);
+                    setupColors(view, resources);
+                    setupColorChoice(view, resources);
                 }
             }
         });
@@ -213,12 +226,7 @@ public class ColorsGameEyeFrag extends Fragment {
         }
     }
 
-    private void setupColorChoice(View view, String locale) {
-        Context context;
-        Resources resources;
-
-        context = LocaleHelper.setLocale(getActivity(), locale);
-        resources = context.getResources();
+    private void setupColorChoice(View view, Resources resources) {
 
         final TextView text_color = view.findViewById(R.id.text_color);
 

@@ -32,13 +32,21 @@ public class ColorsGameWriteFrag extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_colors_game_write, container, false);
 
-        color_game=new Game(Constants.NBR_COLORS_TOTAL,getContext());
 
-        String locale = "en";
+
+        String locale = getArguments().getString("locale");
+
+        Context context;
+        Resources resources;
+
+        context = LocaleHelper.setLocale(getActivity(), locale);
+        resources = context.getResources();
+
+        color_game=new Game(Constants.NBR_COLORS_TOTAL,resources);
 
         setupToolbar(view);
         //setupReload(view, locale);
-        setupColors(view, locale);
+        setupColors(view, resources);
 
         return view;
     }
@@ -48,7 +56,11 @@ public class ColorsGameWriteFrag extends Fragment {
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
+
                 MenuTrainFrag train_menu_frag = new MenuTrainFrag();
+                train_menu_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.color_game_write_frag, train_menu_frag)
                         .addToBackStack(null)
@@ -69,7 +81,7 @@ public class ColorsGameWriteFrag extends Fragment {
 
     }*/
 
-    private void setupColors(View view, String locale) {
+    private void setupColors(View view, Resources resources) {
 
         int color_to_find=color_game.get_element_to_write(Constants.TYPE_COLORS);
 
@@ -81,7 +93,7 @@ public class ColorsGameWriteFrag extends Fragment {
             public void onClick(View v) {
 
                 if (color_game.verify_write_victory(text.getText().toString(),Constants.TYPE_COLORS)) {
-                    setupColors(view, locale);
+                    setupColors(view, resources);
                 }
             }
         });

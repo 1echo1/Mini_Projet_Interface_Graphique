@@ -22,6 +22,7 @@ import com.example.projet.R;
 import com.example.projet.activities.MainActivity;
 import com.example.projet.fragments.MenuLearnFrag;
 import com.example.projet.models.LocaleHelper;
+import com.example.projet.utils.Constants;
 
 public class MenuFrag extends Fragment {
 
@@ -34,7 +35,16 @@ public class MenuFrag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_menu, container, false);
-        setupMenu(view);
+
+        String locale = getArguments().getString("locale");
+
+        Context context;
+        Resources resources;
+
+        context = LocaleHelper.setLocale(getActivity(), locale);
+        resources = context.getResources();
+
+        setupMenu(view,resources,locale);
 
         Log.d("Mess","MENU GRAG");
 
@@ -42,14 +52,19 @@ public class MenuFrag extends Fragment {
     }
 
 
-    public void setupMenu(View view){
+    public void setupMenu(View view, Resources resources, String locale){
         final Button btn_learn=view.findViewById(R.id.btn_learn);
+        btn_learn.setText(resources.getText(R.string.btn_learn));
         btn_learn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("Mess","LEARN CLICK");
 
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
+
                 MenuLearnFrag menu_learn_frag= new MenuLearnFrag();
+                menu_learn_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .setCustomAnimations(R.anim.fragment_open_enter,
                                 R.anim.fragment_close_exit)
@@ -60,11 +75,16 @@ public class MenuFrag extends Fragment {
         });
 
         final Button btn_train = view.findViewById(R.id.btn_train);
+        btn_train.setText(resources.getText(R.string.btn_train));
         btn_train.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
+
                 MenuTrainFrag menu_train_frag= new MenuTrainFrag();
+                menu_train_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .setCustomAnimations(R.anim.fragment_open_enter,
                                 R.anim.fragment_close_exit)
@@ -75,6 +95,7 @@ public class MenuFrag extends Fragment {
         });
 
         final Button btn_google_p = view.findViewById(R.id.btn_google_play);
+        btn_google_p.setText(resources.getText(R.string.btn_google_play));
         btn_google_p.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +108,12 @@ public class MenuFrag extends Fragment {
                 R.array.languages_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        if(locale=="fr"){
+            spinner.setSelection(1);
+        }else{
+            spinner.setSelection(0);
+        }
 
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

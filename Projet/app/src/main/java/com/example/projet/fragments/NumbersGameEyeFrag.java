@@ -33,17 +33,24 @@ public class NumbersGameEyeFrag extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_numbers_eye_game, container, false);
 
-        num_game = new Game(Constants.NBR_NUMS_TOTAL,getContext());
+
 
         Log.d("Mess", "GAME NUM FRAG");
 
-        //  Bundle bundle = getActivity().getIntent().getExtras();
-        String locale = "en";//bundle.getString("locale");
+        String locale = getArguments().getString("locale");
+
+        Context context;
+        Resources resources;
+
+        context = LocaleHelper.setLocale(getActivity(), locale);
+        resources = context.getResources();
+
+        num_game = new Game(Constants.NBR_NUMS_TOTAL, resources);
 
         setupToolbar(view);
-        setupNumbers(locale, view);
-        setupNumChoice(locale, view);
-        setupReload(locale, view);
+        setupNumbers(view, resources);
+        setupNumChoice(view, resources);
+        setupReload(view, resources);
 
         return view;
     }
@@ -53,7 +60,11 @@ public class NumbersGameEyeFrag extends Fragment {
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
+
                 MenuTrainFrag train_menu_frag = new MenuTrainFrag();
+                train_menu_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.numbers_game_frag, train_menu_frag)
                         .addToBackStack(null)
@@ -62,27 +73,27 @@ public class NumbersGameEyeFrag extends Fragment {
         });
     }
 
-    private void setupReload(String locale, View view) {
+    private void setupReload( View view,Resources resources) {
         final ImageView img_reload = view.findViewById(R.id.img_reload);
         img_reload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setupNumbers(locale, view);
-                setupNumChoice(locale, view);
+                setupNumbers(view,resources);
+                setupNumChoice(view,resources);
             }
         });
 
     }
 
-    private void setupNumbers(String locale, View view) {
+    private void setupNumbers(View view,Resources resources) {
 
         final Button btn_num_1 = view.findViewById(R.id.btn_num_1);
         btn_num_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (num_game.verify_find_victory(num_game.get_cell(0))) {
-                    setupNumbers(locale, view);
-                    setupNumChoice(locale, view);
+                    setupNumbers(view,resources);
+                    setupNumChoice(view,resources);
                 }
             }
         });
@@ -92,8 +103,8 @@ public class NumbersGameEyeFrag extends Fragment {
             @Override
             public void onClick(View v) {
                 if (num_game.verify_find_victory(num_game.get_cell(1))) {
-                    setupNumbers(locale, view);
-                    setupNumChoice(locale, view);
+                    setupNumbers(view,resources);
+                    setupNumChoice(view,resources);
                 }
             }
         });
@@ -103,8 +114,8 @@ public class NumbersGameEyeFrag extends Fragment {
             @Override
             public void onClick(View v) {
                 if (num_game.verify_find_victory(num_game.get_cell(2))) {
-                    setupNumbers(locale, view);
-                    setupNumChoice(locale, view);
+                    setupNumbers(view,resources);
+                    setupNumChoice(view,resources);
                 }
             }
         });
@@ -114,8 +125,8 @@ public class NumbersGameEyeFrag extends Fragment {
             @Override
             public void onClick(View v) {
                 if (num_game.verify_find_victory(num_game.get_cell(3))) {
-                    setupNumbers(locale, view);
-                    setupNumChoice(locale, view);
+                    setupNumbers(view,resources);
+                    setupNumChoice(view,resources);
                 }
             }
         });
@@ -243,12 +254,7 @@ public class NumbersGameEyeFrag extends Fragment {
         }
     }
 
-    private void setupNumChoice(String locale, View view) {
-        Context context;
-        Resources resources;
-
-        context = LocaleHelper.setLocale(getActivity(), locale);
-        resources = context.getResources();
+    private void setupNumChoice(View view,Resources resources) {
 
         final TextView text_num = view.findViewById(R.id.text_num);
 

@@ -1,5 +1,7 @@
 package com.example.projet.fragments;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -16,6 +18,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.projet.R;
+import com.example.projet.models.LocaleHelper;
 
 public class NumsLearnFrag extends Fragment {
 
@@ -25,8 +28,16 @@ public class NumsLearnFrag extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_nums_learn, container, false);
 
+        String locale = getArguments().getString("locale");
+
+        Context context;
+        Resources resources;
+
+        context = LocaleHelper.setLocale(getActivity(), locale);
+        resources = context.getResources();
+
         setupToolbar(view);
-        setupList(view);
+        setupList(view, resources);
 
         return view;
     }
@@ -36,7 +47,11 @@ public class NumsLearnFrag extends Fragment {
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
+
                 MenuLearnFrag learn_menu_frag = new MenuLearnFrag();
+                learn_menu_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.num_learn_frag, learn_menu_frag)
                         .addToBackStack(null)
@@ -45,7 +60,9 @@ public class NumsLearnFrag extends Fragment {
         });
     }
 
-    void setupList(View view){
+    void setupList(View view, Resources resources){
+        TextView tv_num=view.findViewById(R.id.tv_num);
+        tv_num.setText(resources.getText(R.string.btn_numbers));
 
         String[] num_val ={"0","1","2","3","4","5","6","7","8","9"};
 
@@ -67,16 +84,16 @@ public class NumsLearnFrag extends Fragment {
                 return view;
             }
         };
-        num_list.addAll(getString(R.string.num_zero),
-                getString(R.string.num_one),
-                getString(R.string.num_two),
-                getString(R.string.num_three),
-                getString(R.string.num_four),
-                getString(R.string.num_five),
-                getString(R.string.num_six),
-                getString(R.string.num_seven),
-                getString(R.string.num_eight),
-                getString(R.string.num_nine));
+        num_list.addAll(resources.getString(R.string.num_zero),
+                resources.getString(R.string.num_one),
+                resources.getString(R.string.num_two),
+                resources.getString(R.string.num_three),
+                resources.getString(R.string.num_four),
+                resources.getString(R.string.num_five),
+                resources.getString(R.string.num_six),
+                resources.getString(R.string.num_seven),
+                resources.getString(R.string.num_eight),
+                resources.getString(R.string.num_nine));
 
         ListView list=view.findViewById(R.id.list_num);
         list.setAdapter(num_list);

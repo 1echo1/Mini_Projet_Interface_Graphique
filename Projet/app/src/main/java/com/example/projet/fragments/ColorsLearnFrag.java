@@ -1,5 +1,7 @@
 package com.example.projet.fragments;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -16,6 +18,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.projet.R;
+import com.example.projet.models.LocaleHelper;
 
 public class ColorsLearnFrag extends Fragment {
 
@@ -25,8 +28,16 @@ public class ColorsLearnFrag extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_colors_learn, container, false);
 
+        String locale = getArguments().getString("locale");
+
+        Context context;
+        Resources resources;
+
+        context = LocaleHelper.setLocale(getActivity(), locale);
+        resources = context.getResources();
+
         setupToolbar(view);
-        setupList(view);
+        setupList(view, resources);
 
         return view;
     }
@@ -36,8 +47,11 @@ public class ColorsLearnFrag extends Fragment {
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
 
                 MenuLearnFrag learn_menu_frag = new MenuLearnFrag();
+                learn_menu_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.color_learn_frag, learn_menu_frag)
                         .addToBackStack(null)
@@ -46,7 +60,10 @@ public class ColorsLearnFrag extends Fragment {
         });
     }
 
-    void setupList(View view){
+    void setupList(View view, Resources resources){
+
+        final TextView tv_colors=view.findViewById(R.id.tv_colors);
+        tv_colors.setText(resources.getText(R.string.btn_colors));
 
         Drawable[] colors_val ={getActivity().getDrawable(R.drawable.rectangle_learn_red),
                 getActivity().getDrawable(R.drawable.rectangle_learn_blue),
@@ -76,14 +93,14 @@ public class ColorsLearnFrag extends Fragment {
                 return view;
             }
         };
-        colors_list.addAll(getString(R.string.clr_red),
-                getString(R.string.clr_blue),
-                getString(R.string.clr_black),
-                getString(R.string.clr_white),
-                getString(R.string.clr_orange),
-                getString(R.string.clr_yellow),
-                getString(R.string.clr_brown),
-                getString(R.string.clr_green));
+        colors_list.addAll(resources.getString(R.string.clr_red),
+                resources.getString(R.string.clr_blue),
+                resources.getString(R.string.clr_black),
+                resources.getString(R.string.clr_white),
+                resources.getString(R.string.clr_orange),
+                resources. getString(R.string.clr_yellow),
+                resources.getString(R.string.clr_brown),
+                resources. getString(R.string.clr_green));
 
         ListView list=view.findViewById(R.id.list_colors);
         list.setAdapter(colors_list);

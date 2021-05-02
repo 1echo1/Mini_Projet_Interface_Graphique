@@ -1,5 +1,7 @@
 package com.example.projet.fragments;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -29,8 +31,16 @@ public class MenuLearnFrag extends Fragment {
 
         View view= inflater.inflate(R.layout.fragment_menu_learn, container, false);
 
+        String locale = getArguments().getString("locale");
+
+        Context context;
+        Resources resources;
+
+        context = LocaleHelper.setLocale(getActivity(), locale);
+        resources = context.getResources();
+
         setupToolbar(view);
-        setupMenu(view);
+        setupMenu(view,resources);
 
         Log.d("Mess","MENU LEARN FRAG");
 
@@ -43,7 +53,11 @@ public class MenuLearnFrag extends Fragment {
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MenuFrag menu_frag= new MenuFrag();
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
+
+                MenuFrag menu_frag = new MenuFrag();
+                menu_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.learn_menu_frag, menu_frag)
                         .addToBackStack(null)
@@ -52,14 +66,22 @@ public class MenuLearnFrag extends Fragment {
         });
     }
 
-    public void setupMenu(View view){
-        final TextView tv_train=view.findViewById(R.id.tv_train);
+    public void setupMenu(View view, Resources resources){
+
+
+        final TextView tv_learn=view.findViewById(R.id.tv_learn);
+        tv_learn.setText(resources.getText(R.string.text_learn_menu));
 
         final Button btn_col=view.findViewById(R.id.btn_color_game);
+        btn_col.setText(resources.getText(R.string.btn_colors));
         btn_col.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
+
                 ColorsLearnFrag colors_frag= new ColorsLearnFrag();
+                colors_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.learn_menu_frag, colors_frag)
                         .addToBackStack(null)
@@ -68,10 +90,15 @@ public class MenuLearnFrag extends Fragment {
         });
 
         final Button btn_num = view.findViewById(R.id.btn_numbers_game);
+        btn_num.setText(resources.getText(R.string.btn_numbers));
         btn_num.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
+
                 NumsLearnFrag num_frag= new NumsLearnFrag();
+                num_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.learn_menu_frag, num_frag)
                         .addToBackStack(null)
@@ -80,10 +107,15 @@ public class MenuLearnFrag extends Fragment {
         });
 
         final Button btn_veh = view.findViewById(R.id.btn_vehicles_game);
+        btn_veh.setText(resources.getText(R.string.btn_vehicles));
         btn_veh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
+
                 VehiclesLearnFrag veh_frag= new VehiclesLearnFrag();
+                veh_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.learn_menu_frag, veh_frag)
                         .addToBackStack(null)

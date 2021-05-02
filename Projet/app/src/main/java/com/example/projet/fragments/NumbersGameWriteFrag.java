@@ -1,5 +1,7 @@
 package com.example.projet.fragments;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -14,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.projet.R;
 import com.example.projet.models.Game;
+import com.example.projet.models.LocaleHelper;
 import com.example.projet.utils.Constants;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -26,9 +29,17 @@ public class NumbersGameWriteFrag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_numbers_game_write, container, false);
-        num_game=new Game(Constants.NBR_NUMS_TOTAL,getContext());
 
-        String locale = "en";
+
+        String locale = getArguments().getString("locale");
+
+        Context context;
+        Resources resources;
+
+        context = LocaleHelper.setLocale(getActivity(), locale);
+        resources = context.getResources();
+
+        num_game=new Game(Constants.NBR_NUMS_TOTAL,resources);
 
         setupToolbar(view);
         //setupReload(view, locale);
@@ -42,7 +53,11 @@ public class NumbersGameWriteFrag extends Fragment {
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
+
                 MenuTrainFrag train_menu_frag = new MenuTrainFrag();
+                train_menu_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.num_game_write_frag, train_menu_frag)
                         .addToBackStack(null)

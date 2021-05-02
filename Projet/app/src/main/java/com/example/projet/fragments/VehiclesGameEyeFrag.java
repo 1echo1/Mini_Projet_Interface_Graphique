@@ -28,9 +28,16 @@ public class VehiclesGameEyeFrag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_vehicles_eye_game, container, false);
-        String locale = "en";
 
-        veh_game=new Game(Constants.NBR_VEH_TOTAL,getContext());
+        String locale = getArguments().getString("locale");
+
+        Context context;
+        Resources resources;
+
+        context = LocaleHelper.setLocale(getActivity(), locale);
+        resources = context.getResources();
+
+        veh_game=new Game(Constants.NBR_VEH_TOTAL,resources);
 
         setupToolbar(view);
         setupVehicles(view,locale);
@@ -45,6 +52,9 @@ public class VehiclesGameEyeFrag extends Fragment {
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
+
                 MenuTrainFrag train_menu_frag = new MenuTrainFrag();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.veh_game_eye_frag, train_menu_frag)
