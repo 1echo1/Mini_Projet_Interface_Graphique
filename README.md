@@ -10,6 +10,7 @@ Voici le logo de l'app:
 
 Elle est disponible en anglais et en français.
 
+
 ## Navigation:
 
 La navigation est la suivante:
@@ -29,6 +30,24 @@ D'autre part nous avons la partie Train. On peut s'entraîner de deux façons.
 2) Écrire un élément
 
 ![Screenshot_20210502_231604_com example projet](https://user-images.githubusercontent.com/48416661/116828033-833d1b80-ab9c-11eb-9765-5d7309c3e66e.jpg)
+
+
+## Animations:
+
+Deux animations sont utilisées. La première quand on va vert MenuLearn depuis le menu, et la deuxième lorsqu'on va du menu vers MenuTrain.
+
+
+## TODO:
+
+  -Bugg: Superposition de fragments: On peut cliquer sur des boutons qui appartienne à l'ancien fragment.
+  -Bugg: Bouton retour et "colors" depuis "menu train" ne fonctionnent si on les clique en premier.
+  
+  -Add: Audios lorqu'on clique sur l'icone de l'haut-parleur dans Learn.
+  -Add: Plus de commentaires.
+  -Add: Fire base.
+  -Add: Documentation.
+  
+
 
 ## Changement de langue
 
