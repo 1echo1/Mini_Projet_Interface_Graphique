@@ -58,6 +58,9 @@
         <action
             android:id="@+id/action_trainTypeChoiceFrag_to_colorsGameWriteFrag"
             app:destination="@id/colorsGameWriteFrag" />
+        <action
+            android:id="@+id/action_trainTypeChoiceFrag_to_numbersGameWriteFrag"
+            app:destination="@id/numbersGameWriteFrag" />
     </fragment>
     <fragment
         android:id="@+id/numbersGameFrag"
@@ -94,4 +97,9 @@
         android:name="com.example.projet.fragments.ColorsGameWriteFrag"
         android:label="fragment_colors_game_write"
         tools:layout="@layout/fragment_colors_game_write" />
+    <fragment
+        android:id="@+id/numbersGameWriteFrag"
+        android:name="com.example.projet.fragments.NumbersGameWriteFrag"
+        android:label="fragment_numbers_game_write"
+        tools:layout="@layout/fragment_numbers_game_write" />
 </navigation>
