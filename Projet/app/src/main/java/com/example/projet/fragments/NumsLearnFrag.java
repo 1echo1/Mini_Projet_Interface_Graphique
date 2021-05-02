@@ -28,7 +28,7 @@ public class NumsLearnFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_nums_learn, container, false);
+        View view = inflater.inflate(R.layout.fragment_nums_learn, container, false);
 
         String locale = getArguments().getString("locale");
 
@@ -78,11 +78,11 @@ public class NumsLearnFrag extends Fragment {
 
     }*/
 
-    void setupList(View view, Resources resources){
-        TextView tv_num=view.findViewById(R.id.tv_num);
+    void setupList(View view, Resources resources) {
+        TextView tv_num = view.findViewById(R.id.tv_num);
         tv_num.setText(resources.getText(R.string.btn_numbers));
 
-        String[] num_val ={"0","1","2","3","4","5","6","7","8","9"};
+        String[] num_val = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
         final ArrayAdapter<String> num_list = new ArrayAdapter<String>(getActivity(), R.layout.list_item_num_version, R.id.tv_type_to_learn) {
             @NonNull
@@ -90,7 +90,7 @@ public class NumsLearnFrag extends Fragment {
             public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
 
-                String color=getItem(position);
+                String color = getItem(position);
 
                 TextView tv_num_img = view.findViewById(R.id.tv_num_learn);
                 TextView tv_num = view.findViewById(R.id.tv_type_to_learn);
@@ -113,7 +113,7 @@ public class NumsLearnFrag extends Fragment {
                 resources.getString(R.string.num_eight),
                 resources.getString(R.string.num_nine));
 
-        ListView list=view.findViewById(R.id.list_num);
+        ListView list = view.findViewById(R.id.list_num);
         list.setAdapter(num_list);
     }
 }

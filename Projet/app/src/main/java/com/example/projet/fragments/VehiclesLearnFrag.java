@@ -26,7 +26,7 @@ public class VehiclesLearnFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_vehicles_learn, container, false);
+        View view = inflater.inflate(R.layout.fragment_vehicles_learn, container, false);
 
         String locale = getArguments().getString("locale");
 
@@ -60,12 +60,12 @@ public class VehiclesLearnFrag extends Fragment {
         });
     }
 
-    void setupList(View view, Resources resources){
+    void setupList(View view, Resources resources) {
 
-        TextView tv_veh=view.findViewById(R.id.tv_veh);
+        TextView tv_veh = view.findViewById(R.id.tv_veh);
         tv_veh.setText(resources.getText(R.string.btn_vehicles));
 
-        Drawable[] veh_val ={getActivity().getDrawable(R.mipmap.ic_car_foreground),
+        Drawable[] veh_val = {getActivity().getDrawable(R.mipmap.ic_car_foreground),
                 getActivity().getDrawable(R.mipmap.ic_bike_foreground),
                 getActivity().getDrawable(R.mipmap.ic_boat_foreground),
                 getActivity().getDrawable(R.mipmap.ic_bus_foreground),
@@ -79,7 +79,7 @@ public class VehiclesLearnFrag extends Fragment {
             public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
 
-                String vehicle=getItem(position);
+                String vehicle = getItem(position);
 
                 ImageView im_veh = view.findViewById(R.id.img_type_learn);
                 TextView tv_veh = view.findViewById(R.id.tv_type_to_learn);
@@ -98,7 +98,7 @@ public class VehiclesLearnFrag extends Fragment {
                 resources.getString(R.string.veh_moto),
                 resources.getString(R.string.veh_truck));
 
-        ListView list=view.findViewById(R.id.list_veh);
+        ListView list = view.findViewById(R.id.list_veh);
         list.setAdapter(veh_list);
     }
 }

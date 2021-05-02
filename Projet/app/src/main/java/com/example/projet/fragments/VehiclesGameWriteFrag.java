@@ -28,8 +28,7 @@ public class VehiclesGameWriteFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_vehicles_game_write, container, false);
-
+        View view = inflater.inflate(R.layout.fragment_vehicles_game_write, container, false);
 
 
         String locale = getArguments().getString("locale");
@@ -40,7 +39,7 @@ public class VehiclesGameWriteFrag extends Fragment {
         context = LocaleHelper.setLocale(getActivity(), locale);
         resources = context.getResources();
 
-        veh_game=new Game(Constants.NBR_NUMS_TOTAL,resources);
+        veh_game = new Game(Constants.NBR_NUMS_TOTAL, resources);
 
         setupToolbar(view);
         //setupReload(view, locale);
@@ -80,29 +79,29 @@ public class VehiclesGameWriteFrag extends Fragment {
 
     private void setupColors(View view, String locale) {
 
-        int veh_to_find=veh_game.get_element_to_write(Constants.TYPE_VEH);
+        int veh_to_find = veh_game.get_element_to_write(Constants.TYPE_VEH);
 
-        final TextInputEditText text=view.findViewById(R.id.input_veh);
+        final TextInputEditText text = view.findViewById(R.id.input_veh);
 
         final ImageButton btn_check = view.findViewById(R.id.btn_check);
         btn_check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (veh_game.verify_write_victory(text.getText().toString(),Constants.TYPE_VEH)) {
+                if (veh_game.verify_write_victory(text.getText().toString(), Constants.TYPE_VEH)) {
                     setupColors(view, locale);
                 }
             }
         });
 
-        Drawable[] veh_val ={getActivity().getDrawable(R.mipmap.ic_car_foreground),
+        Drawable[] veh_val = {getActivity().getDrawable(R.mipmap.ic_car_foreground),
                 getActivity().getDrawable(R.mipmap.ic_moto_foreground),
                 getActivity().getDrawable(R.mipmap.ic_truck_foreground),
                 getActivity().getDrawable(R.mipmap.ic_bus_foreground),
                 getActivity().getDrawable(R.mipmap.ic_boat_foreground),
                 getActivity().getDrawable(R.mipmap.ic_bike_foreground)};
 
-        final ImageView img_veh=view.findViewById(R.id.img_veh_write);
+        final ImageView img_veh = view.findViewById(R.id.img_veh_write);
         img_veh.setImageDrawable(veh_val[veh_to_find]);
 
     }

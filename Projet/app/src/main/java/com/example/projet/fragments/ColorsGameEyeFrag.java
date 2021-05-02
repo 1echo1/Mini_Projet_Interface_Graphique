@@ -26,19 +26,19 @@ public class ColorsGameEyeFrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_colors_eye_game, container, false);
 
 
-
+        ////////Récupère langue//////////
         String locale = getArguments().getString("locale");
-
         Context context;
         Resources resources;
-
         context = LocaleHelper.setLocale(getActivity(), locale);
         resources = context.getResources();
 
+
+        ////////Création du jeux//////////
         color_game = new Game(Constants.NBR_COLORS_TOTAL, resources);
 
         setupToolbar(view);

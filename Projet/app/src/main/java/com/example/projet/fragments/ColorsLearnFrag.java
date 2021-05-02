@@ -26,13 +26,13 @@ public class ColorsLearnFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_colors_learn, container, false);
+        View view = inflater.inflate(R.layout.fragment_colors_learn, container, false);
 
+
+        ////////Récupère langue//////////
         String locale = getArguments().getString("locale");
-
         Context context;
         Resources resources;
-
         context = LocaleHelper.setLocale(getActivity(), locale);
         resources = context.getResources();
 
@@ -60,12 +60,12 @@ public class ColorsLearnFrag extends Fragment {
         });
     }
 
-    void setupList(View view, Resources resources){
+    void setupList(View view, Resources resources) {
 
-        final TextView tv_colors=view.findViewById(R.id.tv_colors);
+        final TextView tv_colors = view.findViewById(R.id.tv_colors);
         tv_colors.setText(resources.getText(R.string.btn_colors));
 
-        Drawable[] colors_val ={getActivity().getDrawable(R.drawable.rectangle_learn_red),
+        Drawable[] colors_val = {getActivity().getDrawable(R.drawable.rectangle_learn_red),
                 getActivity().getDrawable(R.drawable.rectangle_learn_blue),
                 getActivity().getDrawable(R.drawable.rectangle_learn_black),
                 getActivity().getDrawable(R.drawable.rectangle_learn_white),
@@ -81,11 +81,11 @@ public class ColorsLearnFrag extends Fragment {
             public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
 
-                String color=getItem(position);
+                String color = getItem(position);
 
                 ImageView im_color = view.findViewById(R.id.img_type_learn);
                 TextView tv_color = view.findViewById(R.id.tv_type_to_learn);
-               // ImageButton btn_speaker = view.findViewById(R.id.btn_speaker);
+                // ImageButton btn_speaker = view.findViewById(R.id.btn_speaker);
 
                 tv_color.setText(color);
                 im_color.setImageDrawable(colors_val[position]);
@@ -98,11 +98,11 @@ public class ColorsLearnFrag extends Fragment {
                 resources.getString(R.string.clr_black),
                 resources.getString(R.string.clr_white),
                 resources.getString(R.string.clr_orange),
-                resources. getString(R.string.clr_yellow),
+                resources.getString(R.string.clr_yellow),
                 resources.getString(R.string.clr_brown),
-                resources. getString(R.string.clr_green));
+                resources.getString(R.string.clr_green));
 
-        ListView list=view.findViewById(R.id.list_colors);
+        ListView list = view.findViewById(R.id.list_colors);
         list.setAdapter(colors_list);
     }
 }

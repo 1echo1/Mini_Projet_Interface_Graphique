@@ -29,20 +29,19 @@ public class ColorsGameWriteFrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_colors_game_write, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_colors_game_write, container, false);
 
 
-
+        ////////Récupère langue//////////
         String locale = getArguments().getString("locale");
-
         Context context;
         Resources resources;
-
         context = LocaleHelper.setLocale(getActivity(), locale);
         resources = context.getResources();
 
-        color_game=new Game(Constants.NBR_COLORS_TOTAL,resources);
+
+        color_game = new Game(Constants.NBR_COLORS_TOTAL, resources);
 
         setupToolbar(view);
         //setupReload(view, locale);
@@ -83,22 +82,22 @@ public class ColorsGameWriteFrag extends Fragment {
 
     private void setupColors(View view, Resources resources) {
 
-        int color_to_find=color_game.get_element_to_write(Constants.TYPE_COLORS);
+        int color_to_find = color_game.get_element_to_write(Constants.TYPE_COLORS);
 
-        final TextInputEditText text=view.findViewById(R.id.input_color);
+        final TextInputEditText text = view.findViewById(R.id.input_color);
 
         final ImageButton btn_check = view.findViewById(R.id.btn_check);
         btn_check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (color_game.verify_write_victory(text.getText().toString(),Constants.TYPE_COLORS)) {
+                if (color_game.verify_write_victory(text.getText().toString(), Constants.TYPE_COLORS)) {
                     setupColors(view, resources);
                 }
             }
         });
 
-        Drawable[] colors_val ={getActivity().getDrawable(R.drawable.rectangle_learn_orange),
+        Drawable[] colors_val = {getActivity().getDrawable(R.drawable.rectangle_learn_orange),
                 getActivity().getDrawable(R.drawable.rectangle_learn_blue),
                 getActivity().getDrawable(R.drawable.rectangle_learn_green),
                 getActivity().getDrawable(R.drawable.rectangle_learn_yellow),
@@ -107,7 +106,7 @@ public class ColorsGameWriteFrag extends Fragment {
                 getActivity().getDrawable(R.drawable.rectangle_learn_white),
                 getActivity().getDrawable(R.drawable.rectangle_learn_brown)};
 
-        final ImageView img_color=view.findViewById(R.id.img_color_write);
+        final ImageView img_color = view.findViewById(R.id.img_color_write);
         img_color.setImageDrawable(colors_val[color_to_find]);
 
     }

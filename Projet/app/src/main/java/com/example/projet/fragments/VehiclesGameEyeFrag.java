@@ -27,7 +27,7 @@ public class VehiclesGameEyeFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =inflater.inflate(R.layout.fragment_vehicles_eye_game, container, false);
+        View view = inflater.inflate(R.layout.fragment_vehicles_eye_game, container, false);
 
         String locale = getArguments().getString("locale");
 
@@ -37,17 +37,17 @@ public class VehiclesGameEyeFrag extends Fragment {
         context = LocaleHelper.setLocale(getActivity(), locale);
         resources = context.getResources();
 
-        veh_game=new Game(Constants.NBR_VEH_TOTAL,resources);
+        veh_game = new Game(Constants.NBR_VEH_TOTAL, resources);
 
         setupToolbar(view);
-        setupVehicles(view,locale);
-        setupVehChoice(view,locale);
-        setupReload(view,locale);
+        setupVehicles(view, locale);
+        setupVehChoice(view, locale);
+        setupReload(view, locale);
 
         return view;
     }
 
-    private void setupToolbar(View view){
+    private void setupToolbar(View view) {
         final ImageView img_return = view.findViewById(R.id.img_return);
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,28 +65,28 @@ public class VehiclesGameEyeFrag extends Fragment {
         });
     }
 
-    private void setupReload(View view,String locale){
+    private void setupReload(View view, String locale) {
         final ImageView img_reload = view.findViewById(R.id.img_reload);
         img_reload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setupVehicles(view,locale);
-                setupVehChoice(view,locale);
+                setupVehicles(view, locale);
+                setupVehChoice(view, locale);
             }
         });
 
     }
 
 
-    private void setupVehicles(View view,String locale){
+    private void setupVehicles(View view, String locale) {
 
         final ImageButton btn_veh_1 = view.findViewById(R.id.btn_veh_1);
         btn_veh_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(veh_game.verify_find_victory(veh_game.get_cell(0))) {
-                    setupVehicles(view,locale);
-                    setupVehChoice(view,locale);
+                if (veh_game.verify_find_victory(veh_game.get_cell(0))) {
+                    setupVehicles(view, locale);
+                    setupVehChoice(view, locale);
                 }
             }
         });
@@ -95,20 +95,20 @@ public class VehiclesGameEyeFrag extends Fragment {
         btn_veh_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(veh_game.verify_find_victory(veh_game.get_cell(1))) {
-                    setupVehicles(view,locale);
-                    setupVehChoice(view,locale);
+                if (veh_game.verify_find_victory(veh_game.get_cell(1))) {
+                    setupVehicles(view, locale);
+                    setupVehChoice(view, locale);
                 }
             }
         });
 
-        final ImageButton btn_veh_3 =view.findViewById(R.id.btn_veh_3);
+        final ImageButton btn_veh_3 = view.findViewById(R.id.btn_veh_3);
         btn_veh_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(veh_game.verify_find_victory(veh_game.get_cell(2))) {
-                    setupVehicles(view,locale);
-                    setupVehChoice(view,locale);
+                if (veh_game.verify_find_victory(veh_game.get_cell(2))) {
+                    setupVehicles(view, locale);
+                    setupVehChoice(view, locale);
                 }
             }
         });
@@ -117,21 +117,21 @@ public class VehiclesGameEyeFrag extends Fragment {
         btn_veh_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(veh_game.verify_find_victory(veh_game.get_cell(3))) {
-                    setupVehicles(view,locale);
-                    setupVehChoice(view,locale);
+                if (veh_game.verify_find_victory(veh_game.get_cell(3))) {
+                    setupVehicles(view, locale);
+                    setupVehChoice(view, locale);
                 }
             }
         });
 
         veh_game.choose_elements_display();
 
-        for(int i = 0; i<veh_game.array.length; i++) {
+        for (int i = 0; i < veh_game.array.length; i++) {
             Log.d("Array", String.valueOf(veh_game.array[i]));
         }
 
 
-        for(int i = 0; i<veh_game.array.length; i++) {
+        for (int i = 0; i < veh_game.array.length; i++) {
             switch (veh_game.get_cell(i)) {
                 case Constants.CAR:
                     if (i == 0) {
@@ -203,7 +203,7 @@ public class VehiclesGameEyeFrag extends Fragment {
         }
     }
 
-    private void setupVehChoice(View view,String locale){
+    private void setupVehChoice(View view, String locale) {
         Context context;
         Resources resources;
 
@@ -212,9 +212,9 @@ public class VehiclesGameEyeFrag extends Fragment {
 
         final TextView text_veh = view.findViewById(R.id.text_veh);
 
-        int veh=veh_game.get_element_to_find();
+        int veh = veh_game.get_element_to_find();
 
-        switch (veh){
+        switch (veh) {
             case Constants.CAR:
                 text_veh.setText(resources.getString(R.string.veh_car));
                 break;

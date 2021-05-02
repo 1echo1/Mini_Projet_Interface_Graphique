@@ -47,7 +47,6 @@ public class MenuTrainFrag extends Fragment {
         return view;
     }
 
-
     private void setupToolbar(View view) {
         final ImageView img_return = view.findViewById(R.id.img_return);
         img_return.setOnClickListener(new View.OnClickListener() {

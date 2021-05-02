@@ -28,7 +28,7 @@ public class NumbersGameWriteFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_numbers_game_write, container, false);
+        View view = inflater.inflate(R.layout.fragment_numbers_game_write, container, false);
 
 
         String locale = getArguments().getString("locale");
@@ -39,7 +39,7 @@ public class NumbersGameWriteFrag extends Fragment {
         context = LocaleHelper.setLocale(getActivity(), locale);
         resources = context.getResources();
 
-        num_game=new Game(Constants.NBR_NUMS_TOTAL,resources);
+        num_game = new Game(Constants.NBR_NUMS_TOTAL, resources);
 
         setupToolbar(view);
         //setupReload(view, locale);
@@ -80,22 +80,22 @@ public class NumbersGameWriteFrag extends Fragment {
 
     private void setupColors(View view, String locale) {
 
-        int num_to_find=num_game.get_element_to_write(Constants.TYPE_NUM);
+        int num_to_find = num_game.get_element_to_write(Constants.TYPE_NUM);
 
-        final TextInputEditText text=view.findViewById(R.id.input_num);
+        final TextInputEditText text = view.findViewById(R.id.input_num);
 
         final ImageButton btn_check = view.findViewById(R.id.btn_check);
         btn_check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (num_game.verify_write_victory(text.getText().toString(),Constants.TYPE_NUM)) {
+                if (num_game.verify_write_victory(text.getText().toString(), Constants.TYPE_NUM)) {
                     setupColors(view, locale);
                 }
             }
         });
 
-        final TextView num_find=view.findViewById(R.id.tv_num_write);
+        final TextView num_find = view.findViewById(R.id.tv_num_write);
         num_find.setText(String.valueOf(num_to_find));
 
     }

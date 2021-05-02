@@ -26,29 +26,27 @@ public class MenuLearnFrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+        View view = inflater.inflate(R.layout.fragment_menu_learn, container, false);
 
 
-        View view= inflater.inflate(R.layout.fragment_menu_learn, container, false);
-
+        ////////Récupère langue//////////
         String locale = getArguments().getString("locale");
-
         Context context;
         Resources resources;
-
         context = LocaleHelper.setLocale(getActivity(), locale);
         resources = context.getResources();
 
         setupToolbar(view);
-        setupMenu(view,resources);
+        setupMenu(view, resources);
 
-        Log.d("Mess","MENU LEARN FRAG");
+        Log.d("Mess", "MENU LEARN FRAG");
 
         return view;
     }
 
 
-    private void setupToolbar(View view){
+    private void setupToolbar(View view) {
         final ImageView img_return = view.findViewById(R.id.img_return);
         img_return.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,13 +64,13 @@ public class MenuLearnFrag extends Fragment {
         });
     }
 
-    public void setupMenu(View view, Resources resources){
+    public void setupMenu(View view, Resources resources) {
 
 
-        final TextView tv_learn=view.findViewById(R.id.tv_learn);
+        final TextView tv_learn = view.findViewById(R.id.tv_learn);
         tv_learn.setText(resources.getText(R.string.text_learn_menu));
 
-        final Button btn_col=view.findViewById(R.id.btn_color_game);
+        final Button btn_col = view.findViewById(R.id.btn_color_game);
         btn_col.setText(resources.getText(R.string.btn_colors));
         btn_col.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +78,7 @@ public class MenuLearnFrag extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
 
-                ColorsLearnFrag colors_frag= new ColorsLearnFrag();
+                ColorsLearnFrag colors_frag = new ColorsLearnFrag();
                 colors_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.learn_menu_frag, colors_frag)
@@ -97,7 +95,7 @@ public class MenuLearnFrag extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
 
-                NumsLearnFrag num_frag= new NumsLearnFrag();
+                NumsLearnFrag num_frag = new NumsLearnFrag();
                 num_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.learn_menu_frag, num_frag)
@@ -114,7 +112,7 @@ public class MenuLearnFrag extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
 
-                VehiclesLearnFrag veh_frag= new VehiclesLearnFrag();
+                VehiclesLearnFrag veh_frag = new VehiclesLearnFrag();
                 veh_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.learn_menu_frag, veh_frag)

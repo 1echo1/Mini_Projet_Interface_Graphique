@@ -34,36 +34,36 @@ public class MenuFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_menu, container, false);
+        View view = inflater.inflate(R.layout.fragment_menu, container, false);
 
+
+        ////////Récupère langue//////////
         String locale = getArguments().getString("locale");
-
         Context context;
         Resources resources;
-
         context = LocaleHelper.setLocale(getActivity(), locale);
         resources = context.getResources();
 
-        setupMenu(view,resources,locale);
+        setupMenu(view, resources, locale);
 
-        Log.d("Mess","MENU GRAG");
+        Log.d("Mess", "MENU GRAG");
 
         return view;
     }
 
 
-    public void setupMenu(View view, Resources resources, String locale){
-        final Button btn_learn=view.findViewById(R.id.btn_learn);
+    public void setupMenu(View view, Resources resources, String locale) {
+        final Button btn_learn = view.findViewById(R.id.btn_learn);
         btn_learn.setText(resources.getText(R.string.btn_learn));
         btn_learn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Mess","LEARN CLICK");
+                Log.d("Mess", "LEARN CLICK");
 
                 Bundle bundle = new Bundle();
                 bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
 
-                MenuLearnFrag menu_learn_frag= new MenuLearnFrag();
+                MenuLearnFrag menu_learn_frag = new MenuLearnFrag();
                 menu_learn_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .setCustomAnimations(R.anim.fragment_open_enter,
@@ -79,16 +79,17 @@ public class MenuFrag extends Fragment {
         btn_train.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("Mess", "Train CLICK");
 
                 Bundle bundle = new Bundle();
                 bundle.putString("locale", LocaleHelper.getLanguage(getActivity()));
 
-                MenuTrainFrag menu_train_frag= new MenuTrainFrag();
-                menu_train_frag.setArguments(bundle);
+                MenuTrainFrag train_menu_frag = new MenuTrainFrag();
+                train_menu_frag.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .setCustomAnimations(R.anim.fragment_open_enter,
                                 R.anim.fragment_close_exit)
-                        .replace(R.id.frag_menu, menu_train_frag)
+                        .replace(R.id.frag_menu, train_menu_frag)
                         .addToBackStack(null)
                         .commit();
             }
@@ -109,9 +110,9 @@ public class MenuFrag extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        if(locale=="fr"){
+        if (locale == "fr") {
             spinner.setSelection(1);
-        }else{
+        } else {
             spinner.setSelection(0);
         }
 
@@ -146,7 +147,7 @@ public class MenuFrag extends Fragment {
 
     }
 
-    public void openGooglePlay(){
+    public void openGooglePlay() {
         Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
         intent.setData(Uri.parse("https://play.google.com/store/apps"));
         startActivity(intent);
